@@ -1,5 +1,0 @@
-Color Palette:
-Deep Blue: #00204A (from logo)
-Gold: #FFC635 (from logo)
-Secondary Blue: #002B5B (for gradients)
-Gold Highlight: #FFD700 (for gradients)

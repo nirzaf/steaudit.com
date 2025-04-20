@@ -1,0 +1,3 @@
+Black: The dominant color used across all formats, specified repeatedly as #000000ff, hsla(0, 0%, 0%, 1), or rgba(0, 0, 0, 1).
+Steel Blue: #2F7EAEff, hsla(203, 57%, 43%, 1), or rgba(47, 126, 174, 1).
+Moonstone: #4EA4C0ff, hsla(195, 48%, 53%, 1), or rgba(78, 164, 192, 1).

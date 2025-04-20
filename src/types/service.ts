@@ -1,7 +1,7 @@
-import { IconType } from 'react-icons';
+import { LucideIcon } from 'lucide-react';
 
 export interface Service {
   title: string;
   description: string;
-  icon: IconType;
+  icon: LucideIcon;
 }

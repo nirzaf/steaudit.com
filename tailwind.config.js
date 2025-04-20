@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0511F2',    // Deep royal blue
-        secondary: '#3279A6',  // Ocean blue
-        accent: '#3285A6',     // Bright teal blue
-        'site-bg': '#F2F2F2', // Light gray background
+        primary: '#000000',    // Black (dominant)
+        secondary: '#2F7EAE',  // Steel Blue
+        accent: '#4EA4C0',     // Moonstone
+        'site-bg': '#FFFFFF', // White background
         // Add gray color palette for compatibility with v4
         gray: {
           50: 'rgb(249 250 251)',
