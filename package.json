@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^10.0.7",
-    "@react-three/fiber": "^9.1.2",
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.15.19",
     "@supabase/supabase-js": "^2.49.4",
     "framer-motion": "^12.9.4",
     "gsap": "^3.13.0",
