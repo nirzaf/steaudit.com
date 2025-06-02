@@ -13,7 +13,7 @@
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
     "@supabase/supabase-js": "^2.49.8",
-    "framer-motion": "^12.12.2",
+    "framer-motion": "^12.15.0",
     "gsap": "^3.13.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
