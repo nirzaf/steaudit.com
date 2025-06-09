@@ -16,7 +16,7 @@
     "framer-motion": "^12.16.0",
     "gsap": "^3.13.0",
     "lottie-react": "^2.4.1",
-    "lucide-react": "^0.511.0",
+    "lucide-react": "^0.513.0",
     "react-dom": "^19.1.0",
     "react": "^19.1.0",
     "react-helmet-async": "^2.0.5",
