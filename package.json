@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-three/drei": "^10.5.1",
-    "@react-three/fiber": "^9.2.0",
+    "@react-three/fiber": "^9.3.0",
     "@supabase/supabase-js": "^2.52.0",
     "framer-motion": "^12.23.6",
     "gsap": "^3.13.0",
