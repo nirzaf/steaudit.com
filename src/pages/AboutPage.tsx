@@ -6,6 +6,7 @@ import Benefits from '../components/about/Benefits';
 import MissionVision from '../components/about/MissionVision';
 import CoreValues from '../components/about/CoreValues';
 import SEO from '../components/SEO';
+import OurTeam from '../components/about/OurTeam';
 
 export default function AboutPage() {
   return (
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <Benefits />
       <MissionVision />
       <CoreValues />
+      <OurTeam />
     </div>
   );
 }

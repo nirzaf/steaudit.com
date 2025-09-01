@@ -8,24 +8,27 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,53,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.08),transparent_40%)] pointer-events-none"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-16">
-        <motion.div 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative py-20 sm:py-24 md:py-28">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center"
         >
-          <div className="bg-[#FFC635]/10 backdrop-blur-xl p-4 rounded-2xl mb-6 transform -rotate-6 hover:rotate-0 transition-transform duration-500">
-            <Info className="h-8 w-8 text-[#FFC635]" strokeWidth={1.5} />
+          <div className="bg-[#FFC635]/10 backdrop-blur-xl p-3 sm:p-4 rounded-2xl mb-6 transform -rotate-6 hover:rotate-0 transition-transform duration-500">
+            <Info
+              className="h-6 w-6 sm:h-8 sm:w-8 text-[#FFC635]"
+              strokeWidth={1.5}
+            />
           </div>
-          <motion.p 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-2xl md:text-3xl font-medium tracking-tight text-[#FFC635]/90 max-w-3xl"
+            className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-[#FFC635]/90 max-w-3xl"
           >
-            Our journey of excellence in auditing and consultancy
-          </motion.p>
+            Forging a Path of Excellence in Auditing and Consultancy
+          </motion.h1>
         </motion.div>
       </div>
       

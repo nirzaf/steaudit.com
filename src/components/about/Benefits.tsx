@@ -2,26 +2,30 @@ import { Heart, DollarSign, Clock4, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const benefits = [
-  { 
-    name: 'We Do Things With Love And Passion',
-    description: 'Every project is handled with utmost care and dedication to ensure exceptional quality and outstanding results.',
-    icon: Heart 
+  {
+    name: 'Passion-Driven Work',
+    description:
+      'Every project is infused with genuine care and dedication, ensuring exceptional quality and outstanding results.',
+    icon: Heart,
   },
-  { 
-    name: 'Affordable Price Range',
-    description: 'Competitive pricing without compromising on the quality of our services, delivering maximum value for your investment.',
-    icon: DollarSign 
+  {
+    name: 'Affordable Excellence',
+    description:
+      'We offer competitive pricing without ever compromising on the quality of our services, delivering maximum value.',
+    icon: DollarSign,
   },
-  { 
-    name: 'Receive on Time',
-    description: 'We value your time and ensure timely delivery of all our commitments, maintaining strict adherence to project schedules.',
-    icon: Clock4 
+  {
+    name: 'Timely Delivery',
+    description:
+      'Your time is valuable. We guarantee on-time delivery of all commitments, adhering strictly to project schedules.',
+    icon: Clock4,
   },
-  { 
-    name: 'Satisfaction Guaranteed',
-    description: 'Your satisfaction is our priority, backed by our commitment to excellence and continuous support throughout the process.',
-    icon: CheckCircle2 
-  }
+  {
+    name: 'Guaranteed Satisfaction',
+    description:
+      'Your satisfaction is our ultimate goal, backed by a commitment to excellence and continuous support.',
+    icon: CheckCircle2,
+  },
 ];
 
 const containerVariants = {
@@ -29,9 +33,9 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const itemVariants = {
@@ -41,51 +45,65 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
 };
 
 export default function Benefits() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_40%)] pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.08),transparent_40%)] pointer-events-none"></div>
-
+    <section className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div 
-          className="grid md:grid-cols-4 gap-8"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+            Our Core Benefits
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+            Experience the advantages of a partnership built on trust and
+            excellence.
+          </p>
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {benefits.map((benefit, index) => (
-            <motion.div 
+          {benefits.map((benefit) => (
+            <motion.div
               key={benefit.name}
               variants={itemVariants}
               className="group h-full"
             >
-              <div className="relative p-8 rounded-3xl bg-white/80 backdrop-blur-xl border border-gray-100/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 h-full flex flex-col">
-                <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
-                
-                <div className="relative flex flex-col flex-1">
-                  {/* Icon container with gradient background */}
-                  <div className="mb-6 relative">
-                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full transform -translate-y-1/2"></div>
-                    <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                      <benefit.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
+              <div
+                className="relative p-6 sm:p-8 rounded-3xl bg-gray-50/50 border border-gray-100
+                          shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 h-full flex flex-col"
+              >
+                <div className="relative flex flex-col flex-1 items-center text-center">
+                  <div className="mb-4 sm:mb-6">
+                    <div
+                      className="bg-gradient-to-br from-blue-500 to-blue-600 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl
+                                flex items-center justify-center transform transition-transform duration-500
+                                group-hover:scale-110 group-hover:rotate-3"
+                    >
+                      <benefit.icon
+                        className="h-6 w-6 sm:h-8 sm:w-8 text-white"
+                        strokeWidth={1.5}
+                      />
                     </div>
                   </div>
-
-                  {/* Text content */}
                   <div className="flex flex-col flex-1 justify-between">
-                    <h3 className="text-xl font-medium text-gray-900 mb-3 text-center">
+                    <h3 className="text-lg sm:text-xl font-medium text-gray-900 mb-2">
                       {benefit.name}
                     </h3>
-                    <p className="text-gray-600 text-center text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>
