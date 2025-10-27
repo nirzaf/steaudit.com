@@ -118,7 +118,7 @@ export default function Services() {
                   <img 
                     className="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
                     src={service.image} 
-                    alt={service.title}
+                    alt={service.description}
                   />
                   {/* Icon Overlay */}
                   <div className="absolute top-4 right-4">

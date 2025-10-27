@@ -15,7 +15,7 @@ export default function OurStory() {
           <div>
             <img 
               src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg?updatedAt=1732207350705"
-              alt="Our Team"
+              alt="The Salem Taleb Efaifa Auditing team working collaboratively in their office"
               className="rounded-lg shadow-xl"
             />
           </div>

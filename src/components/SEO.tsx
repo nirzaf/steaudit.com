@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { seoConfig } from '../config/seo';
 
 interface SEOProps {
@@ -7,12 +8,13 @@ interface SEOProps {
 
 export default function SEO({ page }: SEOProps) {
   const config = seoConfig[page];
+  const location = useLocation();
 
   return (
     <Helmet>
       <title>{config.title}</title>
+      <link rel="canonical" href={`https://steaudit.com${location.pathname}`} />
       <meta name="description" content={config.description} />
-      <meta name="keywords" content={config.keywords} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
