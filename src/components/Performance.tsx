@@ -88,7 +88,7 @@ export default function Performance() {
             <div className="relative">
               <img
                 src="https://ik.imagekit.io/ri5cvrkrr/istockphoto-1328399948-170667a.jpg?updatedAt=1732207359642"
-                alt="Professional Excellence"
+                alt="Auditor reviewing financial documents for external audit service"
                 className="w-full h-[600px] object-cover rounded-xl shadow-2xl"
               />
               {/* Reflection Effect */}

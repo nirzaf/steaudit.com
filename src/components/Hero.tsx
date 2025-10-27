@@ -13,7 +13,7 @@ export default function Hero() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
           src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg?updatedAt=1732207350705"
-          alt="Hero background"
+          alt="Salem Taleb Efaifa team discussing financial strategy in modern office"
           className="w-full h-full object-cover brightness-75"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
