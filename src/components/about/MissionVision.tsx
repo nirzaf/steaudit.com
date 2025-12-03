@@ -77,17 +77,17 @@ export default function MissionVision() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="group h-full"
           >
-            <div className="backdrop-blur-xl bg-white/80 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 h-full">
+            <div className="backdrop-blur-xl bg-white/85 rounded-3xl p-8 shadow-[0_8px_30px_rgba(15,23,42,0.06)] border border-brand-secondary/15 hover:shadow-[0_20px_40px_rgba(15,23,42,0.12)] transition-shadow duration-500 h-full">
               <div className="flex items-start space-x-6 h-full">
-                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-2xl shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                <div className="bg-gradient-to-br from-brand-secondary to-brand-accent p-4 rounded-2xl shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
                   <AnimatedTarget />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-medium tracking-tight text-gray-900 mb-1">
+                  <h2 className="text-3xl font-medium tracking-tight text-brand-primary mb-1">
                     Our Mission
                   </h2>
-                  <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-6"></div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <div className="h-1 w-12 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-full mb-6"></div>
+                  <p className="text-brand-primary/70 leading-relaxed">
                     Audit and Assurance helps our clients achieve its targets by providing objective and independent audit and assurance services to reduce risk and improve operations and to ensure best practice in all aspects of financial reporting and compliance activities.
                   </p>
                 </div>
@@ -103,17 +103,17 @@ export default function MissionVision() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="group h-full"
           >
-            <div className="backdrop-blur-xl bg-white/80 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 h-full">
+            <div className="backdrop-blur-xl bg-white/85 rounded-3xl p-8 shadow-[0_8px_30px_rgba(15,23,42,0.06)] border border-brand-secondary/15 hover:shadow-[0_20px_40px_rgba(15,23,42,0.12)] transition-shadow duration-500 h-full">
               <div className="flex items-start space-x-6 h-full">
-                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-2xl shadow-lg transform rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                <div className="bg-gradient-to-br from-brand-secondary to-brand-accent p-4 rounded-2xl shadow-lg transform rotate-6 group-hover:rotate-0 transition-transform duration-500">
                   <AnimatedEye />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-medium tracking-tight text-gray-900 mb-1">
+                  <h2 className="text-3xl font-medium tracking-tight text-brand-primary mb-1">
                     Our Vision
                   </h2>
-                  <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-6"></div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <div className="h-1 w-12 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-full mb-6"></div>
+                  <p className="text-brand-primary/70 leading-relaxed">
                     Striving to be a team of world-class professional Accounting and Assurance experts, setting new standards in the industry. We aim to shape the future of Audit and Assurance services through innovation, integrity, and excellence. Our commitment to continuous improvement and adoption of cutting-edge methodologies ensures we remain at the forefront of the industry.
                   </p>
                 </div>

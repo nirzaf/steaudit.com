@@ -5,7 +5,7 @@ export default function QuoteSection() {
         <blockquote className="text-2xl font-medium text-gray-900 italic">
           "If you can't show through an audit trail how you arrived at the numbers on your balance sheet, that is a significant internal control failure."
         </blockquote>
-        <p className="mt-4 text-lg font-semibold text-blue-600">Robert Cobb</p>
+        <p className="mt-4 text-lg font-semibold text-brand-secondary">Robert Cobb</p>
         <p className="text-gray-500">Auditor</p>
       </div>
     </section>

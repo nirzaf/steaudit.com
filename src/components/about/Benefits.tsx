@@ -48,10 +48,10 @@ const itemVariants = {
 
 export default function Benefits() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white to-brand-neutral/60 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_40%)] pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.08),transparent_40%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(43,108,176,0.08),transparent_40%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(56,178,172,0.08),transparent_40%)] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
@@ -67,15 +67,15 @@ export default function Benefits() {
               variants={itemVariants}
               className="group h-full"
             >
-              <div className="relative p-8 rounded-3xl bg-white/80 backdrop-blur-xl border border-gray-100/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 h-full flex flex-col">
-                <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
+              <div className="relative p-8 rounded-3xl bg-white/85 backdrop-blur-xl border border-brand-secondary/10 shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_20px_40px_rgba(15,23,42,0.12)] transition-shadow duration-500 h-full flex flex-col">
+                <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-brand-secondary/25 to-transparent"></div>
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-brand-secondary/25 to-transparent"></div>
                 
                 <div className="relative flex flex-col flex-1">
                   {/* Icon container with gradient background */}
                   <div className="mb-6 relative">
-                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full transform -translate-y-1/2"></div>
-                    <div className="relative bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                    <div className="absolute inset-0 bg-brand-secondary/15 blur-2xl rounded-full transform -translate-y-1/2"></div>
+                    <div className="relative bg-gradient-to-br from-brand-secondary to-brand-accent w-16 h-16 rounded-2xl flex items-center justify-center mx-auto transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <benefit.icon className="h-8 w-8 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
