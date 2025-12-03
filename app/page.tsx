@@ -7,7 +7,7 @@ import About from '@/components/About';
 import MissionVision from '@/components/MissionVision';
 import Performance from '@/components/Performance';
 import PrimeGlobal from '@/components/PrimeGlobal';
-import { seoConfig } from '@/config/seo';
+import { buildMetadata } from '@/lib/metadata';
 
 // Dynamically import heavy components with GSAP/Lottie animations
 const ServicesShowcase = dynamic(() => import('@/components/ServicesShowcase'), {
@@ -18,16 +18,7 @@ const ServicesShowcase = dynamic(() => import('@/components/ServicesShowcase'), 
     ),
 });
 
-export const metadata: Metadata = {
-    title: seoConfig.home.title,
-    description: seoConfig.home.description,
-    keywords: seoConfig.home.keywords,
-    openGraph: {
-        title: seoConfig.home.title,
-        description: seoConfig.home.description,
-        images: [seoConfig.home.ogImage || ''],
-    },
-};
+export const metadata: Metadata = buildMetadata('home', '/');
 
 export default function HomePage() {
     return (

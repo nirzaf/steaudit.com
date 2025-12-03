@@ -6,18 +6,9 @@ import WhyChooseUs from '@/components/about/WhyChooseUs';
 import Benefits from '@/components/about/Benefits';
 import MissionVision from '@/components/about/MissionVision';
 import CoreValues from '@/components/about/CoreValues';
-import { seoConfig } from '@/config/seo';
+import { buildMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-    title: seoConfig.about.title,
-    description: seoConfig.about.description,
-    keywords: seoConfig.about.keywords,
-    openGraph: {
-        title: seoConfig.about.title,
-        description: seoConfig.about.description,
-        images: [seoConfig.about.ogImage || ''],
-    },
-};
+export const metadata: Metadata = buildMetadata('about', '/about');
 
 export default function AboutPage() {
     return (

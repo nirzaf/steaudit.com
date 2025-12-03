@@ -1,10 +1,9 @@
 'use client';
 
-import React from 'react';
 import { Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const ServicesHeader: React.FC = () => {
+const ServicesHeader = () => {
   return (
     <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden pt-20">
       {/* Decorative elements */}

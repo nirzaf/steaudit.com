@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import HeroSection from '@/components/partners/HeroSection';
 import PartnersSection from '@/components/partners/PartnersSection';
-import { seoConfig } from '@/config/seo';
+import { buildMetadata } from '@/lib/metadata';
 
 const partners = [
     {
@@ -29,16 +29,7 @@ const partners = [
     }
 ];
 
-export const metadata: Metadata = {
-    title: seoConfig.partners.title,
-    description: seoConfig.partners.description,
-    keywords: seoConfig.partners.keywords,
-    openGraph: {
-        title: seoConfig.partners.title,
-        description: seoConfig.partners.description,
-        images: [seoConfig.partners.ogImage || ''],
-    },
-};
+export const metadata: Metadata = buildMetadata('partners', '/partners');
 
 export default function PartnersPage() {
     return (

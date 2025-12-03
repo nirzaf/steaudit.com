@@ -6,31 +6,42 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.pnpm-debug.log*
 
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Dependency/build outputs
 node_modules
 dist
 dist-ssr
 *.local
+
+# Next.js build files
+/.next/
+/out/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+.AppleDouble
+.LSOverride
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+coverage
 
 # Environment files
 .env
 .env.local
 .env.*.local
-
-# Next.js build files
-/.next/
-/out/
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Old source code
 /src_old/
@@ -43,3 +54,6 @@ dist-ssr
 
 # private keys
 *.pem
+
+# Bun
+.bunenv

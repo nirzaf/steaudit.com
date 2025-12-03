@@ -1,12 +1,10 @@
 'use client';
 
-import React from 'react';
-
 interface ServiceIconProps {
     title: string;
 }
 
-const ServiceIcon: React.FC<ServiceIconProps> = ({ title }) => {
+const ServiceIcon = ({ title }: ServiceIconProps) => {
     switch (title) {
         case 'External Audit':
             return (

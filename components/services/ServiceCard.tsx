@@ -1,16 +1,14 @@
 'use client';
-
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Service } from '../../types/service';
 import ServiceIcon from './ServiceIcon';
 
-interface ServiceCardProps extends Service {
+interface ServiceCardProps {
+  title: string;
+  description: string;
   index: number;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, index }) => {
-
+const ServiceCard = ({ title, description, index }: ServiceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

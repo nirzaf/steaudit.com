@@ -4,7 +4,7 @@
 
 ## Description
 
-This project is the official professional website for Salem Taleb Efaifa Auditing & Consultancy, a firm based in Qatar. It is a modern, single-page application (SPA) with multiple routes, providing a comprehensive overview of the company, its services, partners, and contact details.
+This project is the official professional website for Salem Taleb Efaifa Auditing & Consultancy, a firm based in Qatar. It is a modern Next.js 16 experience with multiple routes, providing a comprehensive overview of the company, its services, partners, and contact details.
 
 ## Table of Contents
 
@@ -71,32 +71,27 @@ Striving to be a team of world-class professional Accounting and Assurance exper
 
 ## Technologies Used
 
-- **Framework**: React
+- **Framework**: Next.js 16 (App Router) with React 19
 - **Language**: TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **Routing**: React Router (`react-router-dom`)
+- **Styling**: Tailwind CSS 4
+- **Routing**: File-based routing in `app/`
 - **Animation**: Framer Motion (`framer-motion`), GSAP (`gsap`), Lottie (`lottie-react`), React Three Fiber (`@react-three/fiber`, `@react-three/drei`, `three`)
 - **Backend**: Supabase (`@supabase/supabase-js`)
 - **UI Icons**: Lucide Icons (`lucide-react`), React Icons (`react-icons`)
-- **Linting**: ESLint
-- **SEO**: React Helmet (`react-helmet-async`)
+- **SEO**: Next.js Metadata API with JSON-LD structured data
 - **Notifications**: React Hot Toast (`react-hot-toast`)
 
 ## Project Structure
 
-The project follows a standard Vite + React project structure.
+The project follows the Next.js App Router structure.
 
--   `src/`: Contains the main source code of the application.
-    -   `assets/`: Static assets like images and animations.
-    -   `components/`: Reusable React components.
-    -   `config/`: Configuration files (e.g., SEO).
-    -   `data/`: Data files (e.g., services).
-    -   `lib/`: Library initializations (e.g., Supabase).
-    -   `pages/`: Top-level page components.
-    -   `types/`: TypeScript type definitions.
--   `public/`: Public assets that are not processed by Vite.
--   `dist/`: The production build output.
+- `app/`: Route segments, layouts, and pages (`/`, `/about`, `/services`, `/partners`, `/contact`).
+- `components/`: Reusable UI components.
+- `config/`: Configuration files (e.g., SEO).
+- `data/`: Data files (e.g., services).
+- `lib/`: Library helpers (e.g., Supabase client, metadata builder).
+- `types/`: TypeScript type definitions.
+- `public/`: Public assets such as favicons and the web manifest.
 
 ## Resources
 
@@ -126,6 +121,14 @@ You need to have Bun installed on your machine.
 3. Run the development server
    ```sh
    bun run dev
+   ```
+4. Build for production
+   ```sh
+   bun run build
+   ```
+5. Start the production server
+   ```sh
+   bun run start
    ```
 
 ## Linting

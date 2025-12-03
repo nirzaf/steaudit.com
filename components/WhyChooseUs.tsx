@@ -146,16 +146,18 @@ export default function WhyChooseUs() {
 
         <motion.div
           variants={containerVariants}
-          initial="hidden"
+          initial="visible"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           className="mt-16"
         >
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <motion.div
                 key={feature.name}
                 variants={itemVariants}
+                initial="visible"
+                whileInView="visible"
                 className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 overflow-hidden border border-transparent hover:-translate-y-1 flex flex-col items-center text-center"
               >
                 <div className={`absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${feature.gradient}`}></div>

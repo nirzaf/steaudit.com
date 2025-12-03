@@ -6,7 +6,6 @@ import {
   Calculator,
   CreditCard,
   PieChart,
-  FileContract,
   Briefcase,
   Scale,
   Wallet,

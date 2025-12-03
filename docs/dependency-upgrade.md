@@ -1,5 +1,7 @@
 # Dependency Upgrade: Migrate to Latest Versions and Resolve Conflicts
 
+> Note: This document describes pre-migration work that applied to the legacy Vite/React Router setup. The project now runs on Next.js 16; references to Vite-specific scripts or React Router dependencies are historical.
+
 ## SEVERITY
 P1: High. The project has conflicting dependencies and relies on a flag (`--legacy-peer-deps`) that bypasses dependency resolution issues. Updating dependencies is critical for stability, security, and maintainability.
 

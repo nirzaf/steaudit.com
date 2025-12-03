@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Outfit } from 'next/font/google';
-import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
+import { seoConfig } from '@/config/seo';
+import { SITE_URL, buildMetadata } from '@/lib/metadata';
+import './globals.css';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -17,21 +20,45 @@ const outfit = Outfit({
     display: 'swap',
 });
 
+const defaultSEO = seoConfig.home;
+
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Salem Taleb Efaifa Auditing & Consultancy',
+    image: defaultSEO.ogImage,
+    '@id': SITE_URL,
+    url: SITE_URL,
+    telephone: '+974 5000 8194',
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress:
+            'Office No 4, Building No 3, Street No 902, Zone No 55 Muaither Area',
+        addressLocality: 'Doha',
+        addressRegion: 'Qatar',
+        addressCountry: 'QA',
+    },
+    geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 25.2854,
+        longitude: 51.531,
+    },
+    openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Sunday'],
+        opens: '08:00',
+        closes: '17:00',
+    },
+    sameAs: [
+        'https://www.linkedin.com/company/salem-taleb-efaifa-auditing-consultancy',
+        'https://www.facebook.com/steaudit',
+    ],
+};
+
 export const metadata: Metadata = {
-    title: {
-        default: 'Salem Taleb Efaifa | Leading Auditing & Consultancy in Qatar',
-        template: '%s | Salem Taleb Efaifa',
-    },
-    description:
-        'Salem Taleb Efaifa Auditing & Consultancy offers expert financial services, auditing, consulting, and tax solutions in Qatar. Member of PrimeGlobal with over 30 years of experience.',
-    keywords:
-        'auditing qatar, financial consulting qatar, tax services qatar, accounting services doha, business advisory qatar, salem taleb efaifa, ste audit',
-    openGraph: {
-        title: 'Salem Taleb Efaifa | Leading Auditing & Consultancy in Qatar',
-        description:
-            'Expert financial services, auditing, consulting, and tax solutions in Qatar',
-        images: ['https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg'],
-    },
+    ...buildMetadata('home', '/'),
+    metadataBase: new URL(SITE_URL),
+    icons: { icon: '/favicon.svg' },
 };
 
 export default function RootLayout({
@@ -42,14 +69,27 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${inter.variable} ${outfit.variable}`}
+            className={`${inter.variable} ${outfit.variable} scroll-smooth`}
             suppressHydrationWarning
         >
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(structuredData),
+                    }}
+                />
+            </head>
             <body className="font-sans min-h-screen bg-site-bg antialiased">
                 <Navbar />
                 {children}
                 <Footer />
                 <Toaster position="top-right" />
+                <Script
+                    id="hs-script-loader"
+                    src="//js-eu1.hs-scripts.com/144768548.js"
+                    strategy="afterInteractive"
+                />
             </body>
         </html>
     );

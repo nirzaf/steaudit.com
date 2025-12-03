@@ -16,14 +16,14 @@ export default function Performance() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -56,30 +56,30 @@ export default function Performance() {
 
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               className="grid grid-cols-3 gap-8 pt-8"
             >
               {[
-                { number: '15+', label: 'Years Experience' },
-                { number: '500+', label: 'Clients Served' },
-                { number: '98%', label: 'Client Satisfaction' }
+                  { number: '15+', label: 'Years Experience' },
+                  { number: '500+', label: 'Clients Served' },
+                  { number: '98%', label: 'Client Satisfaction' },
               ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                    {stat.number}
+                  <div key={index} className="text-center">
+                    <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
                   </div>
-                  <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
-                </div>
               ))}
             </motion.div>
           </motion.div>
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 1, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
