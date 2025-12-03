@@ -1,5 +1,3 @@
-import React from 'react';
-
 const values = [
   { name: 'Integrity', iconType: 'shield', description: 'We exhibit fairness, honesty, and ethical behavior in our service to all our clients.' },
   { name: 'Objectivity', iconType: 'compass', description: 'We perform duties in an unbiased manner based on informed analysis and clear understanding.' },

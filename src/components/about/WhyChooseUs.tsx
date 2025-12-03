@@ -1,5 +1,3 @@
-import React from 'react';
-
 const features = [
   { name: 'Business Growth', iconType: 'target' },
   { name: 'Unlimited Revision', iconType: 'clock' },

@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Award, Briefcase, CheckCircle2 } from 'lucide-react';
 
@@ -141,4 +143,3 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
     </section>
   );
 }
-
