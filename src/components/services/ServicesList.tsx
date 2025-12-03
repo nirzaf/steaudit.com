@@ -11,7 +11,8 @@ const ServicesList = ({ services }: ServicesListProps) => {
       {services.map((service, index) => (
         <ServiceCard
           key={service.title}
-          {...service}
+          title={service.title}
+          description={service.description}
           index={index}
         />
       ))}

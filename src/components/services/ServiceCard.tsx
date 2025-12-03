@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Service } from '../../types/service';
 import ServiceIcon from './ServiceIcon';
 
-interface ServiceCardProps extends Service {
+interface ServiceCardProps {
+  title: string;
+  description: string;
   index: number;
 }
 

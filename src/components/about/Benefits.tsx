@@ -43,7 +43,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1]
+      ease: [0.22, 1, 0.36, 1] as const
     }
   }
 };
@@ -63,7 +63,7 @@ export default function Benefits() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {benefits.map((benefit, index) => (
+          {benefits.map((benefit) => (
             <motion.div 
               key={benefit.name}
               variants={itemVariants}

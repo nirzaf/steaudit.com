@@ -87,11 +87,17 @@ export default function ServicesShowcase() {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   const controls = useAnimation();
   const [activeService, setActiveService] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  // Handle client-side mounting
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Set up the orbital animation effect
   useEffect(() => {
-    if (!containerRef.current) return;
-    
+    if (!containerRef.current || !mounted) return;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -125,7 +131,7 @@ export default function ServicesShowcase() {
         tl.scrollTrigger.kill();
       }
     };
-  }, [isInView, controls]);
+  }, [isInView, controls, mounted]);
 
   // Animation variants
   const containerVariants = {
@@ -145,7 +151,7 @@ export default function ServicesShowcase() {
       y: 0,
       opacity: 1,
       transition: { 
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 10
       }
@@ -184,18 +190,18 @@ export default function ServicesShowcase() {
         <div ref={containerRef} className="relative h-[600px] mb-12">
           {/* Central Orbital Path */}
           <div className="orbital-path absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-white/10 rotate-0">
-            {services.map((service, index) => {
+            {mounted && services.map((service, index) => {
               // Calculate position on the circle
               const angle = (index * (360 / services.length) * Math.PI) / 180;
-              const x = 250 * Math.cos(angle);
-              const y = 250 * Math.sin(angle);
-              
+              const x = Math.round(250 * Math.cos(angle) * 100) / 100;
+              const y = Math.round(250 * Math.sin(angle) * 100) / 100;
+
               return (
                 <motion.div
                   key={service.id}
                   className={`service-item absolute w-20 h-20 -ml-10 -mt-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-500 ${activeService === index ? 'scale-125 z-20' : 'scale-100 z-10'}`}
-                  style={{ 
-                    left: `calc(50% + ${x}px)`, 
+                  style={{
+                    left: `calc(50% + ${x}px)`,
                     top: `calc(50% + ${y}px)`,
                     background: `linear-gradient(135deg, ${service.color}80, ${service.color}40)`,
                     boxShadow: activeService === index ? `0 0 30px ${service.color}` : 'none'
@@ -205,9 +211,9 @@ export default function ServicesShowcase() {
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    type: 'spring', 
-                    stiffness: 200, 
+                  transition={{
+                    type: 'spring',
+                    stiffness: 200,
                     damping: 15,
                     delay: index * 0.1
                   }}

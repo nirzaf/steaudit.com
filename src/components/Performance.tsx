@@ -8,28 +8,28 @@ export default function Performance() {
       {/* Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-[500px] h-[500px] -top-48 -right-24 rounded-full bg-blue-500/20 blur-3xl"></div>
-        <div className="absolute w-[500px] h-[500px] -bottom-48 -left-24 rounded-full bg-purple-500/20 blur-3xl"></div>
-      </div>
+      <div className="absolute w-[500px] h-[500px] -bottom-48 -left-24 rounded-full bg-purple-500/20 blur-3xl"></div>
+    </div>
 
-      {/* Main Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+    {/* Main Content */}
+    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
+          <motion.h2
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="text-4xl md:text-5xl font-bold tracking-tight"
           >
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold tracking-tight"
-            >
-              Performance Through{' '}
+            Performance Through{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                 Excellence
               </span>
@@ -56,7 +56,7 @@ export default function Performance() {
 
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
@@ -75,16 +75,16 @@ export default function Performance() {
                 </div>
               ))}
             </motion.div>
-          </motion.div>
+        </motion.div>
 
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="relative group"
-          >
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="relative group"
+        >
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
             <div className="relative">
               <img

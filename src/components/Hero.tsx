@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Hero Image with Overlay */}
       <div className="absolute inset-0">
         <motion.img
-          initial={{ scale: 1.1, opacity: 0.8 }}
+          initial={{ scale: 1, opacity: 1 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
           src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg?updatedAt=1732207350705"
@@ -23,8 +23,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-tr from-[#0f172a]/80 via-[#0f172a]/60 to-brand-secondary/40"></div>
         
         {/* Glass Panels */}
-        <motion.div
-          initial={{ opacity: 0 }}
+          <motion.div
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="absolute inset-0"
@@ -39,14 +39,14 @@ export default function Hero() {
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:mt-16 lg:px-8 xl:mt-20">
             <div className="text-center">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="backdrop-blur-sm bg-white/[0.05] py-12 px-6 rounded-2xl shadow-2xl border border-white/10"
               >
                 {/* Tagline */}
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-lg text-brand-accent font-semibold tracking-wide mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
@@ -56,7 +56,7 @@ export default function Hero() {
 
                 {/* Main Title */}
                 <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl mb-6"
@@ -71,7 +71,7 @@ export default function Hero() {
 
                 {/* Description */}
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1 }}
                   className="mt-3 text-lg text-white sm:mt-5 sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
@@ -81,7 +81,7 @@ export default function Hero() {
 
                 {/* Buttons */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.2 }}
                   className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 px-4"
