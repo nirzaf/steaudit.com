@@ -1,5 +1,10 @@
 import type { NextConfig } from 'next';
 
+// Bundle analyzer setup (run with ANALYZE=true)
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+});
+
 const nextConfig: NextConfig = {
     // Enable React Compiler for automatic memoization and performance
     reactCompiler: true,
