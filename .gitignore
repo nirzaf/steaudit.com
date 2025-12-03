@@ -33,4 +33,4 @@ coverage
 .LSOverride
 
 # Bun
-.bun
+.bunenv

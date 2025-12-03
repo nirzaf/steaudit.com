@@ -170,7 +170,7 @@ export default function ServicesShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -200,8 +200,8 @@ export default function ServicesShowcase() {
                 <motion.div
                   key={service.id}
                   className={`service-item absolute w-20 h-20 -ml-10 -mt-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-500 ${activeService === index ? 'scale-125 z-20' : 'scale-100 z-10'}`}
-                  style={{
-                    left: `calc(50% + ${x}px)`,
+                  style={{ 
+                    left: `calc(50% + ${x}px)`, 
                     top: `calc(50% + ${y}px)`,
                     background: `linear-gradient(135deg, ${service.color}80, ${service.color}40)`,
                     boxShadow: activeService === index ? `0 0 30px ${service.color}` : 'none'
@@ -209,11 +209,11 @@ export default function ServicesShowcase() {
                   onClick={() => setActiveService(index)}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, scale: 0 }}
+                  initial={{ opacity: 1, scale: 1 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 200,
+                  transition={{ 
+                    type: 'spring', 
+                    stiffness: 200, 
                     damping: 15,
                     delay: index * 0.1
                   }}
@@ -227,7 +227,7 @@ export default function ServicesShowcase() {
           {/* Central Service Display */}
           <motion.div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 1, scale: 1 }}
             animate={{ 
               opacity: 1, 
               scale: 1,
@@ -353,7 +353,7 @@ export default function ServicesShowcase() {
         {/* Service Details */}
         <motion.div
           key={services[activeService].id}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
@@ -370,7 +370,7 @@ export default function ServicesShowcase() {
         {/* Service Selection Pills */}
         <motion.div 
           variants={containerVariants}
-          initial="hidden"
+          initial="visible"
           animate={controls}
           className="flex flex-wrap justify-center gap-2 mt-8"
         >
