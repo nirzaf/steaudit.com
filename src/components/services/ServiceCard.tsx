@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Service } from '../../types/service';
-import { LucideIcon } from 'lucide-react';
+import ServiceIcon from './ServiceIcon';
 
 interface ServiceCardProps extends Service {
   index: number;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, index }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, index }) => {
 
   return (
     <motion.div
@@ -20,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, ind
         <div className="flex-1 p-6 flex flex-col justify-between">
           <div className="flex-1">
             <div className="w-20 h-20 bg-gradient-to-br from-brand-accent/20 to-brand-accent-alt/20 rounded-2xl flex items-center justify-center mb-4 transform -rotate-6 group-hover:rotate-0 group-hover:-translate-y-1 transition-all duration-500 hover:scale-110">
-              {React.createElement(icon, { className: "w-12 h-12 text-brand-accent" })}
+              <ServiceIcon title={title} />
             </div>
             <h3 className="text-xl font-semibold text-brand-primary group-hover:text-brand-accent mb-2 transition-colors duration-300">
               {title}

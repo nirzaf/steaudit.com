@@ -25,6 +25,12 @@ textarea {
   border-color: rgb(209 213 219);
 }
 
+input:focus,
+textarea:focus {
+  --tw-ring-color: rgb(59 130 246);
+  border-color: rgb(59 130 246);
+}
+
 /* Animation styles for ServicesShowcase */
 @keyframes blob {
   0% {
@@ -56,8 +62,326 @@ textarea {
   animation-delay: 4s;
 }
 
-input:focus,
-textarea:focus {
-  --tw-ring-color: rgb(59 130 246);
-  border-color: rgb(59 130 246);
+/* Service Icon Animations */
+.icon-svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-brand-primary);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* 1. External Audit: Scan Animation */
+.audit-glass {
+  transform-origin: center;
+  animation: scan 3s ease-in-out infinite;
+}
+
+@keyframes scan {
+
+  0%,
+  100% {
+    transform: translate(-5px, -5px);
+  }
+
+  50% {
+    transform: translate(5px, 5px);
+  }
+}
+
+/* 2. Real Time Software: Bar Growth */
+.bar-1 {
+  animation: grow 2s infinite ease-in-out;
+  transform-origin: bottom;
+}
+
+.bar-2 {
+  animation: grow 2s infinite ease-in-out 0.5s;
+  transform-origin: bottom;
+}
+
+.bar-3 {
+  animation: grow 2s infinite ease-in-out 1s;
+  transform-origin: bottom;
+}
+
+@keyframes grow {
+
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* 3. Consulting: Pulse */
+.bulb-glow {
+  animation: pulse-light 2s infinite;
+}
+
+@keyframes pulse-light {
+
+  0%,
+  100% {
+    stroke-opacity: 1;
+    fill-opacity: 0;
+  }
+
+  50% {
+    stroke-opacity: 0.5;
+    fill-opacity: 0.3;
+    fill: var(--color-brand-secondary);
+  }
+}
+
+/* 4. Financial Statements: Sheet Float */
+.doc-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* 5. Budgeting: Calculator Press */
+.calc-btn {
+  animation: press 2s infinite;
+}
+
+.calc-btn:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.calc-btn:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes press {
+
+  0%,
+  100% {
+    fill-opacity: 0;
+  }
+
+  50% {
+    fill: var(--color-brand-primary);
+    fill-opacity: 0.3;
+  }
+}
+
+/* 6. Payroll: Card Slide */
+.card-swipe {
+  animation: swipe 3s infinite ease-in-out;
+}
+
+@keyframes swipe {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+/* 7. Investment: Graph Rise */
+.trend-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-line 3s infinite ease-out;
+}
+
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: 100;
+  }
+
+  50%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 8. Tax Return: Stamp Check */
+.check-mark {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: check-draw 2s infinite ease-in-out 1s;
+}
+
+@keyframes check-draw {
+  0% {
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* 9. Business Valuation: Scales */
+.scale-beam {
+  transform-origin: center;
+  animation: tilt 4s ease-in-out infinite;
+}
+
+@keyframes tilt {
+
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* 10. Feasibility: Briefcase Shake */
+.briefcase {
+  transform-origin: center;
+  animation: shake 4s ease-in-out infinite;
+}
+
+@keyframes shake {
+
+  0%,
+  90%,
+  100% {
+    transform: rotate(0);
+  }
+
+  92% {
+    transform: rotate(-3deg);
+  }
+
+  94% {
+    transform: rotate(3deg);
+  }
+
+  96% {
+    transform: rotate(-3deg);
+  }
+
+  98% {
+    transform: rotate(3deg);
+  }
+}
+
+/* 11. Book Keeping: Page Turn */
+.book-page {
+  transform-origin: left;
+  animation: flip 3s ease-in-out infinite;
+}
+
+@keyframes flip {
+
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(0.1);
+  }
+}
+
+/* 12. Fin Management: Shield Shine */
+.shield-icon {
+  fill: transparent;
+  animation: fill-shield 3s infinite alternate;
+}
+
+@keyframes fill-shield {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgba(79, 172, 254, 0.1);
+  }
+}
+
+/* 13. Start-up: Rocket Hover */
+.rocket {
+  animation: hover-fly 2s ease-in-out infinite;
+}
+
+@keyframes hover-fly {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* 14. ERP: Network Connect */
+.node {
+  animation: node-pulse 2s infinite alternate;
+}
+
+.node:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.node:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes node-pulse {
+  0% {
+    r: 2;
+  }
+
+  100% {
+    r: 3;
+    fill: var(--color-brand-primary);
+  }
+}
+
+/* 15. Risk: Lock */
+.lock-shackle {
+  transform-origin: 12px 11px;
+  animation: lock-toggle 4s infinite;
+}
+
+@keyframes lock-toggle {
+
+  0%,
+  45%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50%,
+  95% {
+    transform: scaleY(0.8) translateY(2px);
+  }
 }
