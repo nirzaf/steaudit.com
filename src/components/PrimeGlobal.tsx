@@ -1,27 +1,39 @@
 import { motion } from 'framer-motion';
-import { Globe, Users, MapPin, Building } from 'lucide-react';
+import { Globe, Users, MapPin, Handshake } from 'lucide-react';
 
 const stats = [
   {
-    icon: <Users className="w-6 h-6" />,
+    id: 1,
     value: '3,000+',
-    label: 'Partners'
+    label: 'Partners',
+    icon: <Handshake className="w-10 h-10 text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6" strokeWidth={1.5} />,
+    description: 'Collaborating across firms',
+    delay: 0,
   },
   {
-    icon: <Building className="w-6 h-6" />,
+    id: 2,
     value: '28,000+',
-    label: 'Employees'
+    label: 'Employees',
+    icon: <Users className="w-10 h-10 text-white transition-transform duration-500 group-hover:scale-110 group-hover:translate-y-1" strokeWidth={1.5} />,
+    description: 'Dedicated professionals',
+    delay: 0.15,
   },
   {
-    icon: <MapPin className="w-6 h-6" />,
+    id: 3,
     value: '940+',
-    label: 'Locations'
+    label: 'Locations',
+    icon: <MapPin className="w-10 h-10 text-white transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1" strokeWidth={1.5} />,
+    description: 'Offices worldwide',
+    delay: 0.3,
   },
   {
-    icon: <Globe className="w-6 h-6" />,
+    id: 4,
     value: '100+',
-    label: 'Countries'
-  }
+    label: 'Countries',
+    icon: <Globe className="w-10 h-10 text-white transition-transform duration-700 group-hover:rotate-180" strokeWidth={1.5} />,
+    description: 'Global presence',
+    delay: 0.45,
+  },
 ];
 
 export default function PrimeGlobal() {
@@ -80,19 +92,22 @@ export default function PrimeGlobal() {
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
+              transition={{ duration: 0.6, delay: stat.delay ?? 0.1 * index }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:-translate-y-1"
             >
-              <div className="bg-brand-primary bg-opacity-10 rounded-full p-3 w-fit mx-auto mb-4">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-secondary to-brand-accent shadow-md">
                 {stat.icon}
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-brand-primary mb-1">
                   {stat.value}
                 </div>
-                <div className="text-gray-600 text-sm">
+                <div className="text-brand-primary/70 text-sm">
                   {stat.label}
+                </div>
+                <div className="text-brand-primary/60 text-xs mt-2">
+                  {stat.description}
                 </div>
               </div>
             </motion.div>
