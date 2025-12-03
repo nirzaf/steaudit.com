@@ -31,9 +31,6 @@ const nextConfig: NextConfig = {
 
     // Enable experimental features for performance
     experimental: {
-        // Enable PPR (Partial Pre-Rendering) for better performance
-        ppr: 'incremental',
-
         // Optimize server actions
         serverActions: {
             bodySizeLimit: '2mb',
@@ -46,6 +43,9 @@ const nextConfig: NextConfig = {
             'framer-motion',
         ],
     },
+
+    // Enable Partial Pre-Rendering via cacheComponents (Next.js 16+)
+    cacheComponents: true,
 
     // Production optimizations
     compress: true,
