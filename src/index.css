@@ -85,6 +85,217 @@ textarea:focus {
   display: block;
 }
 
+/* Premium icon animations (Why Choose Us) */
+@keyframes arrow-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes ring-pulse {
+  0%,
+  100% {
+    stroke-width: 2;
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    stroke-width: 2.5;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.icon-target .target-arrow {
+  animation: arrow-float 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.icon-target .target-ring-outer,
+.icon-target .target-ring-inner {
+  transform-origin: center;
+  animation: ring-pulse 4s ease-in-out infinite;
+}
+
+.icon-target .target-ring-inner {
+  animation-delay: 0.5s;
+}
+
+@keyframes spin-smooth {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-clock .clock-min {
+  transform-origin: 12px 12px;
+  animation: spin-smooth 6s linear infinite;
+}
+
+.icon-clock .clock-hour {
+  transform-origin: 12px 12px;
+  animation: spin-smooth 36s linear infinite;
+}
+
+@keyframes star-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+    transform: scale(1);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.icon-star .main-star {
+  transform-origin: center;
+  animation: star-glow 3s ease-in-out infinite;
+}
+
+.icon-star .sparkle-1 {
+  transform-origin: center;
+  animation: sparkle-twinkle 2s ease-in-out infinite;
+}
+
+.icon-star .sparkle-2 {
+  transform-origin: center;
+  animation: sparkle-twinkle 3s ease-in-out infinite 1s;
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes handle-tip {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-3deg);
+  }
+
+  80% {
+    transform: rotate(3deg);
+  }
+}
+
+.icon-case .case-group {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+.icon-case .case-handle {
+  transform-origin: 12px 6px;
+  animation: handle-tip 5s ease-in-out infinite;
+}
+
+@keyframes calendar-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes check-pulse {
+  0%,
+  100% {
+    stroke-opacity: 0.7;
+    stroke-width: 2;
+  }
+
+  50% {
+    stroke-opacity: 1;
+    stroke-width: 2.5;
+  }
+}
+
+.icon-calendar .cal-whole {
+  transform-origin: top center;
+  animation: calendar-sway 6s ease-in-out infinite;
+}
+
+.icon-calendar .check-mark {
+  animation: check-pulse 3s ease-in-out infinite;
+}
+
+@keyframes medal-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-4deg);
+  }
+
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes ribbon-shine {
+  0%,
+  100% {
+    stroke-opacity: 0.8;
+  }
+
+  50% {
+    stroke-opacity: 1;
+    filter: drop-shadow(0 0 2px white);
+  }
+}
+
+.icon-medal .medal-whole {
+  transform-origin: top center;
+  animation: medal-wave 5s ease-in-out infinite;
+}
+
+.icon-medal .medal-star {
+  animation: ribbon-shine 3s ease-in-out infinite;
+}
+
 /* 1. External Audit: Scan Animation */
 .audit-glass {
   transform-origin: center;
