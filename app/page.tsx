@@ -16,11 +16,7 @@ const ServicesShowcase = dynamic(() => import('@/components/ServicesShowcase'), 
             <div className="animate-pulse text-gray-400">Loading services...</div>
         </div>
     ),
-    ssr: false, // Disable SSR for heavy animations
 });
-
-// Enable static generation with revalidation
-export const revalidate = 3600; // Revalidate every hour (ISR)
 
 export const metadata: Metadata = {
     title: seoConfig.home.title,

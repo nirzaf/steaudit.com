@@ -2,9 +2,6 @@ import type { Metadata } from 'next';
 import Contact from '@/components/Contact';
 import { seoConfig } from '@/config/seo';
 
-// Contact page doesn't need revalidation (dynamic content)
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: seoConfig.contact.title,
     description: seoConfig.contact.description,
