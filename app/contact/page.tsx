@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import Contact from '@/components/Contact';
 import { seoConfig } from '@/config/seo';
 
+// Force dynamic rendering for contact page (uses Supabase)
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: seoConfig.contact.title,
     description: seoConfig.contact.description,
