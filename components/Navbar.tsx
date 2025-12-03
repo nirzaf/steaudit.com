@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -54,13 +55,20 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center h-20 lg:h-24">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <motion.img
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
-                src="https://ik.imagekit.io/ri5cvrkrr/LOGO-.png?updatedAt=1732207359661"
-                alt="STE Logo"
-                className="h-10 sm:h-12 lg:h-14 w-auto transition-all duration-300"
-              />
+                className="relative h-10 sm:h-12 lg:h-14 w-auto"
+              >
+                <Image
+                  src="https://ik.imagekit.io/ri5cvrkrr/LOGO-.png?updatedAt=1732207359661"
+                  alt="STE Logo"
+                  width={140}
+                  height={56}
+                  priority
+                  className="h-10 sm:h-12 lg:h-14 w-auto transition-all duration-300"
+                />
+              </motion.div>
             </Link>
 
             {/* Desktop Navigation */}

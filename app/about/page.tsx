@@ -8,6 +8,9 @@ import MissionVision from '@/components/about/MissionVision';
 import CoreValues from '@/components/about/CoreValues';
 import { seoConfig } from '@/config/seo';
 
+// Enable static generation with revalidation
+export const revalidate = 3600; // Revalidate every hour (ISR)
+
 export const metadata: Metadata = {
     title: seoConfig.about.title,
     description: seoConfig.about.description,

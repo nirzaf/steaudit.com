@@ -3,20 +3,29 @@
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <div id="home" className="relative min-h-screen">
       {/* Hero Image with Overlay */}
       <div className="absolute inset-0">
-        <motion.img
+        <motion.div
           initial={{ scale: 1.1, opacity: 0.8 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
-          src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg?updatedAt=1732207350705"
-          alt="Hero background"
-          className="w-full h-full object-cover brightness-75"
-        />
+          className="w-full h-full relative"
+        >
+          <Image
+            src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg?updatedAt=1732207350705"
+            alt="Hero background"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover brightness-75"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
 
         {/* Subtle Gradient Overlay */}

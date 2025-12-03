@@ -3,6 +3,9 @@ import HeroSection from '@/components/partners/HeroSection';
 import PartnersSection from '@/components/partners/PartnersSection';
 import { seoConfig } from '@/config/seo';
 
+// Enable static generation with revalidation
+export const revalidate = 3600; // Revalidate every hour (ISR)
+
 const partners = [
     {
         name: 'Salem Taleb Efaifa (MBA)',
