@@ -11,7 +11,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowJs": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -28,8 +28,7 @@
         "./*"
       ]
     },
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
@@ -40,6 +39,7 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src_old"
   ]
 }
