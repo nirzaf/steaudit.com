@@ -39,12 +39,12 @@ const Navbar: React.FC = () => {
     <>
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-white shadow-lg'
-            : 'bg-white/90 backdrop-blur-sm shadow-lg'
+            ? 'bg-white/95 backdrop-blur-md shadow-md'
+            : 'bg-white/80 backdrop-blur-md shadow-sm'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-24">
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
@@ -60,9 +60,9 @@ const Navbar: React.FC = () => {
                 <Link
                   key={path}
                   to={path}
-                  className={`text-sm font-medium transition-all duration-300 px-3 py-2 flex items-center gap-2 ${isActive(path)
-                      ? 'text-brand-primary border-b-2 border-brand-primary'
-                      : 'text-gray-700 hover:text-brand-primary'
+                  className={`text-sm font-semibold tracking-wide transition-all duration-300 px-3 py-2 flex items-center gap-2 ${isActive(path)
+                      ? 'text-brand-secondary border-b-2 border-brand-accent'
+                      : 'text-brand-primary/70 hover:text-brand-secondary'
                     }`}
                 >
                   <Icon size={16} className="flex-shrink-0" />
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden focus:outline-none text-gray-700 hover:text-brand-primary min-h-[44px] min-w-[44px] p-2"
+              className="md:hidden focus:outline-none text-brand-primary/80 hover:text-brand-secondary min-h-[44px] min-w-[44px] p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -83,15 +83,15 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden bg-white shadow-lg rounded-b-2xl">
+            <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg rounded-b-2xl">
               <div className="px-4 pt-2 pb-6 space-y-2">
                 {navLinks.map(({ path, label, icon: Icon }) => (
                   <Link
                     key={path}
                     to={path}
-                    className={`flex items-center gap-3 py-3 text-sm font-medium transition-all duration-300 rounded-lg ${isActive(path)
-                        ? 'text-brand-primary bg-gray-100 px-4'
-                        : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50 px-4'
+                    className={`flex items-center gap-3 py-3 text-sm font-semibold transition-all duration-300 rounded-lg ${isActive(path)
+                        ? 'text-brand-secondary bg-brand-neutral px-4'
+                        : 'text-brand-primary/80 hover:text-brand-secondary hover:bg-brand-neutral/80 px-4'
                       }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import NumberStorm from './NumberStorm';
 
 export default function Hero() {
   return (
@@ -18,11 +17,8 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>
         
-        {/* Number Storm Animation */}
-        <NumberStorm />
-        
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-purple-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#0f172a]/80 via-[#0f172a]/60 to-brand-secondary/40"></div>
         
         {/* Glass Panels */}
         <motion.div
@@ -44,14 +40,14 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="backdrop-blur-sm bg-white/[0.02] py-12 px-6 rounded-2xl shadow-2xl border border-white/10"
+                className="backdrop-blur-sm bg-white/[0.05] py-12 px-6 rounded-2xl shadow-2xl border border-white/10"
               >
                 {/* Tagline */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="text-lg text-blue-300 font-medium tracking-wide mb-6"
+                  className="text-lg text-brand-accent font-semibold tracking-wide mb-6"
                 >
                   Goodbye to Accounting Problems
                 </motion.p>
@@ -61,12 +57,12 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl mb-6"
+                  className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl mb-6 text-white"
                 >
-                  <span className="block text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] bg-clip-text">
+                  <span className="block drop-shadow-[0_2px_2px_rgba(0,0,0,0.6)] bg-clip-text">
                     Salem Taleb Efaifa
                   </span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200 mt-2">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-brand-accent mt-2">
                     Auditing & Consultancy
                   </span>
                 </motion.h1>
@@ -76,7 +72,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1 }}
-                  className="mt-3 text-lg text-gray-300 sm:mt-5 sm:text-xl max-w-2xl mx-auto leading-relaxed font-light"
+                  className="mt-3 text-lg text-gray-100 sm:mt-5 sm:text-xl max-w-2xl mx-auto leading-relaxed font-light"
                 >
                   Salem Taleb Efaifa Auditing and Consultancy is one of top global alliance of expert firms providing high-quality professional services and advice.
                 </motion.p>
@@ -86,28 +82,29 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.2 }}
-                  className="mt-8 sm:mt-10 flex justify-center gap-4"
+                  className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 px-4"
                 >
                   {/* Contact Button */}
                   <Link
                     to="/contact"
-                    className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl text-white font-medium overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+                    className="group relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-xl text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-secondary/40 hover:scale-105 active:scale-95"
                   >
-                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-blue-500 transition-all duration-300 group-hover:opacity-90"></div>
-                    <div className="relative flex items-center">
-                      Contact Us
-                      <ChevronRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-accent to-brand-secondary opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
+                    <div className="relative flex items-center justify-center whitespace-nowrap text-sm sm:text-base">
+                      <span>Contact Us</span>
+                      <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </Link>
 
                   {/* Services Button */}
                   <a
                     href="#services"
-                    className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm rounded-xl text-white font-medium overflow-hidden transition-all duration-300 hover:bg-white/20"
+                    className="group relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 backdrop-blur-sm rounded-xl text-white font-semibold overflow-hidden transition-all duration-300 hover:bg-white/20 hover:scale-105 active:scale-95 border border-white/20 hover:border-white/40"
                   >
-                    <div className="relative flex items-center">
-                      Our Services
-                      <ChevronRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-secondary/20 to-brand-accent/20 opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
+                    <div className="relative flex items-center justify-center whitespace-nowrap text-sm sm:text-base">
+                      <span>Our Services</span>
+                      <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </a>
                 </motion.div>

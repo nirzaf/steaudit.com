@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #00204A;
-  --color-brand-primary-dark: #002B5B;
-  --color-brand-secondary: #2F7EAE;
-  --color-brand-accent: #FFC635;
-  --color-brand-accent-alt: #FFD700;
-  --color-brand-neutral: #4EA4C0;
+  --color-brand-primary: #0f172a;
+  --color-brand-primary-dark: #0b1220;
+  --color-brand-secondary: #2b6cb0;
+  --color-brand-accent: #38b2ac;
+  --color-brand-accent-alt: #6ee7e0;
+  --color-brand-neutral: #e2e8f0;
 }
 
 html {
@@ -14,9 +14,20 @@ html {
 }
 
 body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgb(17 24 39);
+  color: var(--color-brand-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-brand-primary);
 }
 
 /* Custom styles for form elements */
@@ -64,15 +75,14 @@ textarea:focus {
 
 /* Service Icon Animations */
 .icon-svg {
-  width: 48px;
-  height: 48px;
-  stroke: var(--color-brand-primary);
+  width: 64px;
+  height: 64px;
+  stroke: var(--color-brand-secondary);
   stroke-width: 2;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
   display: block;
-  margin-bottom: 1rem;
 }
 
 /* 1. External Audit: Scan Animation */
