@@ -15,10 +15,12 @@ This project is the official professional website for Salem Taleb Efaifa Auditin
 - [Sitemap](#sitemap)
 - [Services Offered](#services-offered)
 - [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
 - [Resources](#resources)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Linting](#linting)
 - [Contact Information](#contact-information)
 
 ## About The Project
@@ -36,7 +38,7 @@ Striving to be a team of world-class professional Accounting and Assurance exper
 ### Our Core Values
 
 - **Integrity**: We exhibit fairness, honesty, and ethical behavior in our service to all our clients.
-- **Objectivity**: We perform duties in an unbiased manner, based on informed analysis and clear understanding of the operations affected.
+- **Objectivity**: We perform duties in an unbiased manner, based on informed analysis, and a clear understanding of the operations affected.
 - **Quality**: We provide accurate reports with timely, feasible, and relevant recommendations.
 - **Community**: We collaborate with colleagues and clients to provide services that improve our stakeholders' effectiveness and efficiency.
 - **Visionary**: We develop creative and innovative approaches to key issues facing our clients.
@@ -69,10 +71,32 @@ Striving to be a team of world-class professional Accounting and Assurance exper
 
 ## Technologies Used
 
-- **Frontend**: React, Vite, TypeScript, Tailwind CSS
-- **Animations**: Framer Motion, Lottie
-- **Backend/Database**: Supabase
-- **Deployment**: Standard web host
+- **Framework**: React
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router (`react-router-dom`)
+- **Animation**: Framer Motion (`framer-motion`), GSAP (`gsap`), Lottie (`lottie-react`), React Three Fiber (`@react-three/fiber`, `@react-three/drei`, `three`)
+- **Backend**: Supabase (`@supabase/supabase-js`)
+- **UI Icons**: Lucide Icons (`lucide-react`), React Icons (`react-icons`)
+- **Linting**: ESLint
+- **SEO**: React Helmet (`react-helmet-async`)
+- **Notifications**: React Hot Toast (`react-hot-toast`)
+
+## Project Structure
+
+The project follows a standard Vite + React project structure.
+
+-   `src/`: Contains the main source code of the application.
+    -   `assets/`: Static assets like images and animations.
+    -   `components/`: Reusable React components.
+    -   `config/`: Configuration files (e.g., SEO).
+    -   `data/`: Data files (e.g., services).
+    -   `lib/`: Library initializations (e.g., Supabase).
+    -   `pages/`: Top-level page components.
+    -   `types/`: TypeScript type definitions.
+-   `public/`: Public assets that are not processed by Vite.
+-   `dist/`: The production build output.
 
 ## Resources
 
@@ -86,23 +110,30 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-You need to have Node.js and npm installed on your machine.
-* npm
+You need to have Bun installed on your machine.
+* Bun
   ```sh
-  npm install npm@latest -g
+  npm install -g bun
   ```
 
 ### Installation
 
 1. Clone the repository to your local machine.
-2. Install NPM packages
+2. Install dependencies
    ```sh
-   npm install
+   bun install
    ```
 3. Run the development server
    ```sh
-   npm run dev
+   bun run dev
    ```
+
+## Linting
+
+To run the linter, use the following command:
+```sh
+bun run lint
+```
 
 ## Contact Information
 
