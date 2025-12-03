@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-gradient-to-r from-[#00204A] to-[#002B5B] text-white overflow-hidden">
+    <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,53,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.08),transparent_40%)] pointer-events-none"></div>
@@ -16,13 +16,13 @@ export default function HeroSection() {
           className="flex flex-col items-center text-center"
         >
           <div className="bg-[#FFC635]/10 backdrop-blur-xl p-4 rounded-2xl mb-6 transform -rotate-6 hover:rotate-0 transition-transform duration-500">
-            <Users className="h-8 w-8 text-[#FFC635]" strokeWidth={1.5} />
+            <Users className="h-8 w-8 text-brand-accent" strokeWidth={1.5} />
           </div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-2xl md:text-3xl font-medium tracking-tight text-[#FFC635]/90 max-w-3xl"
+            className="text-2xl md:text-3xl font-medium tracking-tight text-brand-accent/90 max-w-3xl"
           >
             Meet our experienced leadership team
           </motion.p>
@@ -34,3 +34,4 @@ export default function HeroSection() {
     </div>
   );
 }
+

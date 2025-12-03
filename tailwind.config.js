@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#000000',    // Black (dominant)
-        secondary: '#2F7EAE',  // Steel Blue
-        accent: '#4EA4C0',     // Moonstone
-        'site-bg': '#FFFFFF', // White background
-        // Add gray color palette for compatibility with v4
+        'brand-primary': 'var(--color-brand-primary)',
+        'brand-primary-dark': 'var(--color-brand-primary-dark)',
+        'brand-secondary': 'var(--color-brand-secondary)',
+        'brand-accent': 'var(--color-brand-accent)',
+        'brand-accent-alt': 'var(--color-brand-accent-alt)',
+        'brand-neutral': 'var(--color-brand-neutral)',
+        // Keep gray palette for compatibility
         gray: {
           50: 'rgb(249 250 251)',
           100: 'rgb(243 244 246)',

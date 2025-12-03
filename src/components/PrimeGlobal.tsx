@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { tailwindColors } from '../theme';
 import { Globe, Users, MapPin, Building } from 'lucide-react';
 
 const stats = [
@@ -42,15 +41,15 @@ export default function PrimeGlobal() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className={`text-4xl font-bold ${tailwindColors.primaryText} mb-6 text-left max-w-6xl mx-auto`}>
+          <h2 className="text-4xl font-bold text-brand-primary mb-6 text-left max-w-6xl mx-auto">
             Proud Member of PrimeGlobal
           </h2>
-          
+
           <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
             <div className="md:w-2/3">
               <p className="text-gray-600 text-lg leading-relaxed text-left">
-                PrimeGlobal's independent member firms house a combined total of over 3,000 partners, 28,000 employees, 
-                and upwards of 940 locations in more than 100 countries around the globe. PrimeGlobal members are typically 
+                PrimeGlobal's independent member firms house a combined total of over 3,000 partners, 28,000 employees,
+                and upwards of 940 locations in more than 100 countries around the globe. PrimeGlobal members are typically
                 full service, regional, public accounting and business advisory firms.
               </p>
             </div>
@@ -85,11 +84,11 @@ export default function PrimeGlobal() {
               viewport={{ once: true }}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className={`${tailwindColors.primary} bg-opacity-10 rounded-full p-3 w-fit mx-auto mb-4`}>
+              <div className="bg-brand-primary bg-opacity-10 rounded-full p-3 w-fit mx-auto mb-4">
                 {stat.icon}
               </div>
               <div className="text-center">
-                <div className={`text-2xl font-bold ${tailwindColors.primaryText} mb-1`}>
+                <div className="text-2xl font-bold text-brand-primary mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-600 text-sm">
@@ -109,7 +108,7 @@ export default function PrimeGlobal() {
           className="mt-12 text-center"
         >
           <p className="text-gray-600 italic max-w-3xl mx-auto">
-            "As the international association serving these firms, PrimeGlobal is built first and foremost on strong relationships, 
+            "As the international association serving these firms, PrimeGlobal is built first and foremost on strong relationships,
             and our purpose is to be a source for ideas and access to member firm expertise and fundamental standards for success."
           </p>
         </motion.div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Menu, 
-  X, 
+import {
+  Menu,
+  X,
   Home,
   Info,
   Users,
@@ -37,20 +37,19 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav 
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white shadow-lg' 
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+            ? 'bg-white shadow-lg'
             : 'bg-white/90 backdrop-blur-sm shadow-lg'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img 
-                src="https://ik.imagekit.io/ri5cvrkrr/LOGO-.png?updatedAt=1732207359661" 
-                alt="STE Logo" 
+              <img
+                src="https://ik.imagekit.io/ri5cvrkrr/LOGO-.png?updatedAt=1732207359661"
+                alt="STE Logo"
                 className="h-12 w-auto"
               />
             </Link>
@@ -61,11 +60,10 @@ const Navbar: React.FC = () => {
                 <Link
                   key={path}
                   to={path}
-                  className={`text-sm font-medium transition-all duration-300 px-3 py-2 flex items-center gap-2 ${
-                    isActive(path)
-                      ? 'text-[#00204A] border-b-2 border-[#00204A]'
-                      : 'text-gray-700 hover:text-[#00204A]'
-                  }`}
+                  className={`text-sm font-medium transition-all duration-300 px-3 py-2 flex items-center gap-2 ${isActive(path)
+                      ? 'text-brand-primary border-b-2 border-brand-primary'
+                      : 'text-gray-700 hover:text-brand-primary'
+                    }`}
                 >
                   <Icon size={16} className="flex-shrink-0" />
                   {label}
@@ -75,8 +73,9 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden focus:outline-none text-gray-700 hover:text-[#00204A]"
+              className="md:hidden focus:outline-none text-gray-700 hover:text-brand-primary min-h-[44px] min-w-[44px] p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -90,11 +89,10 @@ const Navbar: React.FC = () => {
                   <Link
                     key={path}
                     to={path}
-                    className={`flex items-center gap-3 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
-                      isActive(path)
-                        ? 'text-[#00204A] bg-gray-100 px-4'
-                        : 'text-gray-700 hover:text-[#00204A] hover:bg-gray-50 px-4'
-                    }`}
+                    className={`flex items-center gap-3 py-3 text-sm font-medium transition-all duration-300 rounded-lg ${isActive(path)
+                        ? 'text-brand-primary bg-gray-100 px-4'
+                        : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50 px-4'
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Icon size={18} className="flex-shrink-0" />

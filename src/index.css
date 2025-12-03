@@ -1,7 +1,12 @@
-@layer reset, base, utilities;
+@import "tailwindcss";
 
-@layer reset {
-  @import "tailwindcss";
+@theme {
+  --color-brand-primary: #00204A;
+  --color-brand-primary-dark: #002B5B;
+  --color-brand-secondary: #2F7EAE;
+  --color-brand-accent: #FFC635;
+  --color-brand-accent-alt: #FFD700;
+  --color-brand-neutral: #4EA4C0;
 }
 
 html {
@@ -15,7 +20,8 @@ body {
 }
 
 /* Custom styles for form elements */
-input, textarea {
+input,
+textarea {
   border-color: rgb(209 213 219);
 }
 
@@ -24,12 +30,15 @@ input, textarea {
   0% {
     transform: scale(1) translate(0px, 0px);
   }
+
   33% {
     transform: scale(1.1) translate(30px, -50px);
   }
+
   66% {
     transform: scale(0.9) translate(-20px, 20px);
   }
+
   100% {
     transform: scale(1) translate(0px, 0px);
   }
@@ -47,7 +56,8 @@ input, textarea {
   animation-delay: 4s;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   --tw-ring-color: rgb(59 130 246);
   border-color: rgb(59 130 246);
 }

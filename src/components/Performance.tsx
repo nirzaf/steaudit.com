@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { tailwindColors } from '../theme';
 
 export default function Performance() {
   return (
@@ -42,13 +41,13 @@ export default function Performance() {
               className="prose prose-lg prose-invert"
             >
               <p className="text-gray-300 leading-relaxed text-lg">
-                Salem Taleb Efaifa Auding and Consultancy is one of the top global alliances of expert firms providing 
-                high-quality professional services and advice. With a rapidly growing global presence made up of accountancy 
-                and law firms worldwide, our cross-border service offering facilitates the international operations of 
+                Salem Taleb Efaifa Auding and Consultancy is one of the top global alliances of expert firms providing
+                high-quality professional services and advice. With a rapidly growing global presence made up of accountancy
+                and law firms worldwide, our cross-border service offering facilitates the international operations of
                 businesses of all sizes and ambition, whatever their needs.
               </p>
               <p className="text-gray-300 leading-relaxed text-lg">
-                Supporting firm growth and development, we are the global alliance of choice offering clients fast and 
+                Supporting firm growth and development, we are the global alliance of choice offering clients fast and
                 effective access to quality-assured accounting and legal professionals across the globe.
               </p>
             </motion.div>
@@ -93,7 +92,7 @@ export default function Performance() {
               />
               {/* Reflection Effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-xl"></div>
-              
+
               {/* Glass Effect Overlay */}
               <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>

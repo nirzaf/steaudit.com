@@ -3,7 +3,7 @@ import { Briefcase } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-gradient-to-r from-[#00204A] to-[#002B5B] text-white overflow-hidden">
+    <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(47,126,174,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(78,164,192,0.08),transparent_40%)] pointer-events-none"></div>
@@ -34,3 +34,4 @@ export default function HeroSection() {
     </div>
   );
 }
+
