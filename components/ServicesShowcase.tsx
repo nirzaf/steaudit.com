@@ -185,10 +185,10 @@ export default function ServicesShowcase() {
           {/* Central Orbital Path */}
           <div className="orbital-path absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-white/10 rotate-0">
             {services.map((service, index) => {
-              // Calculate position on the circle
+              // Calculate position on the circle with rounding to avoid SSR/client float drift
               const angle = (index * (360 / services.length) * Math.PI) / 180;
-              const x = 250 * Math.cos(angle);
-              const y = 250 * Math.sin(angle);
+              const x = Number((250 * Math.cos(angle)).toFixed(3));
+              const y = Number((250 * Math.sin(angle)).toFixed(3));
 
               return (
                 <motion.div
