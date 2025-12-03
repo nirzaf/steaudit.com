@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import ServiceIcon from './services/ServiceIcon';
 import { services as servicesData } from '../data/services';

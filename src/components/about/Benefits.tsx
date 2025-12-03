@@ -1,3 +1,5 @@
+'use client';
+
 import { Heart, DollarSign, Clock4, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 

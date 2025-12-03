@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
@@ -14,7 +17,7 @@ import {
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,9 +35,7 @@ const Navbar: React.FC = () => {
     { path: '/contact', label: 'Contact', icon: PhoneCall }
   ];
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
@@ -50,7 +51,7 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 lg:h-24">
             {/* Logo */}
-            <Link to="/" className="flex items-center group">
+            <Link href="/" className="flex items-center group">
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
@@ -65,7 +66,7 @@ const Navbar: React.FC = () => {
               {navLinks.map(({ path, label, icon: Icon }) => (
                 <Link
                   key={path}
-                  to={path}
+                  href={path}
                   className="relative group"
                 >
                   <div className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 ${isActive(path)
@@ -139,7 +140,7 @@ const Navbar: React.FC = () => {
                       transition={{ delay: index * 0.05, duration: 0.2 }}
                     >
                       <Link
-                        to={path}
+                        href={path}
                         className={`flex items-center gap-3 py-3.5 px-4 text-sm font-semibold transition-all duration-300 rounded-xl ${isActive(path)
                             ? 'text-white bg-gradient-to-r from-brand-secondary to-brand-accent shadow-md'
                             : 'text-brand-primary/80 hover:text-brand-secondary hover:bg-brand-neutral/60 active:scale-95'

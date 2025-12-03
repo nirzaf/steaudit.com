@@ -1,6 +1,8 @@
+'use client';
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -86,7 +88,7 @@ export default function Hero() {
                 >
                   {/* Contact Button */}
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="group relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-xl text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-secondary/40 hover:scale-105 active:scale-95"
                   >
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-accent to-brand-secondary opacity-0 transition-all duration-300 group-hover:opacity-100"></div>

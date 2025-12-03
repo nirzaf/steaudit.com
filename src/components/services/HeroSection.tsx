@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 
@@ -34,4 +36,3 @@ export default function HeroSection() {
     </div>
   );
 }
-

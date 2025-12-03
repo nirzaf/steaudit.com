@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Globe, Users, MapPin, Handshake } from 'lucide-react';
 

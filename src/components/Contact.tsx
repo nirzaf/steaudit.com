@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { HiPhone, HiMail, HiLocationMarker, HiExternalLink } from 'react-icons/hi';
 import { supabase } from '../lib/supabase';
@@ -306,4 +308,3 @@ export default function Contact() {
     </div>
   );
 }
-

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
