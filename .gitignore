@@ -27,3 +27,19 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Next.js build files
+/.next/
+/out/
+
+# Old source code
+/src_old/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# npm packaging
+*.tgz
+
+# private keys
+*.pem
