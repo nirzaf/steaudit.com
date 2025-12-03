@@ -1,5 +1,64 @@
-import { Lightbulb, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const AnimatedTarget = () => (
+  <div className="relative w-14 h-14 flex items-center justify-center">
+    <div className="absolute inset-0 border-2 border-dashed border-brand-secondary/30 rounded-full animate-[spin_10s_linear_infinite]" />
+    <div className="absolute inset-2 border-2 border-brand-secondary/20 rounded-full animate-pulse" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="w-7 h-7 text-brand-secondary relative z-10"
+    >
+      <circle cx="12" cy="12" r="10" className="opacity-20" />
+      <circle cx="12" cy="12" r="6" className="group-hover:scale-110 transition-transform duration-500 origin-center" />
+      <circle cx="12" cy="12" r="2" className="fill-brand-secondary animate-ping" style={{ animationDuration: '3s' }} />
+    </svg>
+    <div className="absolute inset-0 bg-brand-secondary/10 rounded-full blur-xl" />
+  </div>
+);
+
+const AnimatedEye = () => (
+  <div className="relative w-14 h-14 flex items-center justify-center overflow-hidden rounded-full">
+    <div className="absolute inset-0 bg-brand-secondary/10 rounded-full" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="w-8 h-8 text-brand-secondary relative z-10"
+    >
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" className="group-hover:stroke-brand-secondary transition-colors" />
+      <circle cx="12" cy="12" r="3" className="fill-brand-accent/20">
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="-2 0; 2 0; -2 0"
+          dur="4s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+        />
+      </circle>
+      <circle cx="12" cy="12" r="1" className="fill-brand-secondary">
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="-2 0; 2 0; -2 0"
+          dur="4s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+        />
+      </circle>
+    </svg>
+  </div>
+);
 
 export default function MissionVision() {
   return (
@@ -21,7 +80,7 @@ export default function MissionVision() {
             <div className="backdrop-blur-xl bg-white/80 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 h-full">
               <div className="flex items-start space-x-6 h-full">
                 <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-2xl shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
-                  <Lightbulb className="h-8 w-8 text-white" strokeWidth={1.5} />
+                  <AnimatedTarget />
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl font-medium tracking-tight text-gray-900 mb-1">
@@ -47,7 +106,7 @@ export default function MissionVision() {
             <div className="backdrop-blur-xl bg-white/80 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500 h-full">
               <div className="flex items-start space-x-6 h-full">
                 <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-2xl shadow-lg transform rotate-6 group-hover:rotate-0 transition-transform duration-500">
-                  <Eye className="h-8 w-8 text-white" strokeWidth={1.5} />
+                  <AnimatedEye />
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl font-medium tracking-tight text-gray-900 mb-1">

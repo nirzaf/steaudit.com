@@ -1,5 +1,65 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+const AnimatedTarget = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 border-2 border-dashed border-brand-secondary/30 rounded-full animate-[spin_10s_linear_infinite]" />
+    <div className="absolute inset-2 border-2 border-brand-secondary/20 rounded-full animate-pulse" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="w-8 h-8 text-brand-secondary relative z-10"
+    >
+      <circle cx="12" cy="12" r="10" className="opacity-20" />
+      <circle cx="12" cy="12" r="6" className="group-hover:scale-110 transition-transform duration-500 origin-center" />
+      <circle cx="12" cy="12" r="2" className="fill-brand-secondary animate-ping" style={{ animationDuration: '3s' }} />
+    </svg>
+    <div className="absolute inset-0 bg-brand-secondary/10 rounded-full blur-xl" />
+  </div>
+);
+
+const AnimatedEye = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center overflow-hidden rounded-full">
+    <div className="absolute inset-0 bg-brand-secondary/10 rounded-full" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="w-10 h-10 text-brand-secondary relative z-10"
+    >
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" className="group-hover:stroke-brand-secondary transition-colors" />
+      <circle cx="12" cy="12" r="3" className="fill-brand-accent/20">
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="-2 0; 2 0; -2 0"
+          dur="4s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+        />
+      </circle>
+      <circle cx="12" cy="12" r="1" className="fill-brand-secondary">
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="-2 0; 2 0; -2 0"
+          dur="4s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+        />
+      </circle>
+    </svg>
+  </div>
+);
 
 export default function MissionVision() {
   return (
@@ -39,13 +99,13 @@ export default function MissionVision() {
             viewport={{ once: true }}
             className="group relative bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent rounded-2xl transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-secondary/5 to-transparent rounded-2xl transition-opacity duration-500"></div>
             <div className="relative">
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-blue-50 rounded-xl">
-                  <Target className="w-8 h-8 text-blue-600" />
+                <div className="p-3 bg-brand-secondary/10 rounded-xl">
+                  <AnimatedTarget />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-brand-primary ml-4">Our Mission</h3>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 Delivering excellence in auditing and consultancy services through innovative solutions and unwavering commitment to quality.
@@ -69,13 +129,13 @@ export default function MissionVision() {
             viewport={{ once: true }}
             className="group relative bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent rounded-2xl transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-secondary/5 to-transparent rounded-2xl transition-opacity duration-500"></div>
             <div className="relative">
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-blue-50 rounded-xl">
-                  <Eye className="w-8 h-8 text-blue-600" />
+                <div className="p-3 bg-brand-secondary/10 rounded-xl">
+                  <AnimatedEye />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
+                <h3 className="text-2xl font-bold text-brand-primary ml-4">Our Vision</h3>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 Shaping the future of financial services in Qatar by setting new standards of excellence and innovation in auditing and consultancy.
