@@ -74,7 +74,7 @@ export default function Hero() {
                     Salem Taleb Efaifa
                   </span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-brand-accent mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_0_4px_8px_rgb(0_0_0_/_90%)]" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.9))' }}>
-                    Auditing & Consultancy
+                    Auditing & Consultancy in Qatar
                   </span>
                 </motion.h1>
 
@@ -85,7 +85,7 @@ export default function Hero() {
                   transition={{ duration: 0.6, delay: 1 }}
                   className="mt-3 text-lg text-white sm:mt-5 sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
                 >
-                  Salem Taleb Efaifa Auditing and Consultancy is one of top global alliance of expert firms providing high-quality professional services and advice.
+                  Based in Doha, Qatar, Salem Taleb Efaifa Auditing and Consultancy is part of a global alliance of expert firms providing high-quality professional services and advice.
                 </motion.p>
 
                 {/* Buttons */}

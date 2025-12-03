@@ -134,10 +134,10 @@ export default function WhyChooseUs() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="lg:text-center mb-16">
-          <h2 className="text-base font-semibold tracking-wide uppercase text-brand-secondary">Our Advantages</h2>
-          <p className="mt-2 text-4xl font-extrabold text-brand-primary sm:text-5xl">
+          <p className="text-base font-semibold tracking-wide uppercase text-brand-secondary">Our Advantages</p>
+          <h2 className="mt-2 text-4xl font-extrabold text-brand-primary sm:text-5xl">
             Why Choose Us?
-          </p>
+          </h2>
           <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-full"></div>
           <p className="mt-6 max-w-3xl text-xl text-brand-primary/70 lg:mx-auto leading-relaxed">
             We aim to add value to your organisation by offering practical suggestions to improve your systems and manage financial risks.

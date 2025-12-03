@@ -4,8 +4,8 @@ import { Inter, Outfit } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
-import { seoConfig } from '@/config/seo';
 import { SITE_URL, buildMetadata } from '@/lib/metadata';
+import { organizationSchema } from '@/lib/structuredData';
 import './globals.css';
 
 const inter = Inter({
@@ -19,41 +19,6 @@ const outfit = Outfit({
     variable: '--font-outfit',
     display: 'swap',
 });
-
-const defaultSEO = seoConfig.home;
-
-const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: 'Salem Taleb Efaifa Auditing & Consultancy',
-    image: defaultSEO.ogImage,
-    '@id': SITE_URL,
-    url: SITE_URL,
-    telephone: '+974 5000 8194',
-    address: {
-        '@type': 'PostalAddress',
-        streetAddress:
-            'Office No 4, Building No 3, Street No 902, Zone No 55 Muaither Area',
-        addressLocality: 'Doha',
-        addressRegion: 'Qatar',
-        addressCountry: 'QA',
-    },
-    geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 25.2854,
-        longitude: 51.531,
-    },
-    openingHoursSpecification: {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Sunday'],
-        opens: '08:00',
-        closes: '17:00',
-    },
-    sameAs: [
-        'https://www.linkedin.com/company/salem-taleb-efaifa-auditing-consultancy',
-        'https://www.facebook.com/steaudit',
-    ],
-};
 
 export const metadata: Metadata = {
     ...buildMetadata('home', '/'),
@@ -76,7 +41,7 @@ export default function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(structuredData),
+                        __html: JSON.stringify(organizationSchema),
                     }}
                 />
             </head>

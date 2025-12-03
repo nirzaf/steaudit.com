@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import HeroSection from '@/components/partners/HeroSection';
 import PartnersSection from '@/components/partners/PartnersSection';
+import JsonLd from '@/components/JsonLd';
 import { buildMetadata } from '@/lib/metadata';
+import { buildBreadcrumbList } from '@/lib/structuredData';
 
 const partners = [
     {
@@ -32,8 +34,14 @@ const partners = [
 export const metadata: Metadata = buildMetadata('partners', '/partners');
 
 export default function PartnersPage() {
+    const breadcrumbList = buildBreadcrumbList([
+        { name: 'Home', path: '/' },
+        { name: 'Partners', path: '/partners' },
+    ]);
+
     return (
         <div className="pt-20">
+            <JsonLd data={breadcrumbList} id="breadcrumb-partners" />
             <HeroSection />
             <PartnersSection partners={partners} />
         </div>
