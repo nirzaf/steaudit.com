@@ -2,10 +2,14 @@
 
 import { Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLocale } from '../LocaleProvider';
 
 const ServicesHeader = () => {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden pt-20">
+    <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(43,108,176,0.12),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(56,178,172,0.12),transparent_40%)] pointer-events-none"></div>
@@ -26,7 +30,7 @@ const ServicesHeader = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-2xl md:text-3xl font-medium tracking-tight text-brand-accent/90 max-w-3xl"
           >
-            Our Services
+            {t('Our Services', 'خدماتنا')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -34,7 +38,7 @@ const ServicesHeader = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-2xl md:text-3xl font-medium tracking-tight text-brand-accent/90 max-w-3xl"
           >
-            Comprehensive financial solutions tailored to your business needs
+            {t('Comprehensive financial solutions tailored to your business needs', 'حلول مالية شاملة مصممة لتلبية احتياجات عملك')}
           </motion.p>
         </motion.div>
       </div>

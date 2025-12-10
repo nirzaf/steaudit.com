@@ -2,10 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
+import { useLocale } from '../LocaleProvider';
 
 export default function HeroSection() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden">
+    <div className="relative bg-gradient-to-r from-brand-primary to-brand-primary-dark text-white overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(47,126,174,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(78,164,192,0.08),transparent_40%)] pointer-events-none"></div>
@@ -26,7 +30,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-2xl md:text-3xl font-medium tracking-tight text-[#4EA4C0]/90 max-w-3xl"
           >
-            Comprehensive auditing and consultancy services for your business
+            {t('Comprehensive auditing and consultancy services for your business', 'خدمات تدقيق واستشارات شاملة لأعمالك')}
           </motion.p>
         </motion.div>
       </div>
