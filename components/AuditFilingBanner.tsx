@@ -155,7 +155,12 @@ export default function AuditFilingBanner() {
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-20 group-hover:opacity-30 blur transition duration-300"></div>
                             <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-lg border border-slate-600/50 rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl">
-                                <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 flex items-center gap-3 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]">
+                                <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 flex items-center gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-200"
+                                    style={{
+                                        textShadow: '0 2px 12px rgba(59,130,246,0.6), 0 0 30px rgba(34,211,238,0.4)',
+                                        filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                                    }}
+                                >
                                     <span className="w-1 h-7 sm:h-8 bg-gradient-to-b from-blue-400 to-cyan-400 rounded-full shadow-[0_0_12px_rgba(59,130,246,0.6)]"></span>
                                     WHY CHOOSE US
                                 </h3>
@@ -181,8 +186,13 @@ export default function AuditFilingBanner() {
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-10 group-hover:opacity-20 blur transition duration-300"></div>
                             <div className="relative bg-gradient-to-br from-slate-800/70 to-slate-900/70 backdrop-blur-lg border border-slate-600/40 rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl">
-                                <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 text-white flex items-center gap-2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]">
-                                    <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.8)]"></span>
+                                <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-5 text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-blue-200 to-cyan-200 flex items-center gap-2"
+                                    style={{
+                                        textShadow: '0 2px 12px rgba(34,211,238,0.6), 0 0 30px rgba(59,130,246,0.4)',
+                                        filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                                    }}
+                                >
+                                    <span className="w-2 h-2 bg-cyan-300 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,211,238,0.8)]"></span>
                                     OUR KEY SERVICES
                                 </h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
