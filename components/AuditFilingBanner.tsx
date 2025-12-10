@@ -231,6 +231,7 @@ export default function AuditFilingBanner() {
                                         alt={logo.alt}
                                         className="w-full h-full object-contain grayscale-0 group-hover:grayscale-0 transition-all"
                                         loading="lazy"
+                                        suppressHydrationWarning
                                     />
                                 </motion.div>
                             ))}

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -60,13 +59,14 @@ const Navbar = () => {
                 transition={{ duration: 0.2 }}
                 className="relative h-10 sm:h-12 lg:h-14 w-auto"
               >
-                <Image
+                <img
                   src="https://ik.imagekit.io/ri5cvrkrr/LOGO-.png?updatedAt=1732207359661"
                   alt="STE Logo"
                   width={140}
                   height={56}
-                  priority
+                  loading="eager"
                   className="h-10 sm:h-12 lg:h-14 w-auto transition-all duration-300"
+                  style={{ color: 'transparent', filter: 'invert(0)' }}
                 />
               </motion.div>
             </Link>
