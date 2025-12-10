@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useLocale } from './LocaleProvider';
 
 const AnimatedTarget = () => (
   <div className="relative w-16 h-16 flex items-center justify-center">
@@ -64,8 +65,11 @@ const AnimatedEye = () => (
 );
 
 export default function MissionVision() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <section className="pt-8 pb-24 relative overflow-hidden bg-gradient-to-b from-white to-brand-neutral/60">
+    <section className="pt-8 pb-24 relative overflow-hidden bg-gradient-to-b from-white to-brand-neutral/60" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background Decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute transform rotate-12 -right-40 -top-40 w-96 h-96 rounded-full bg-brand-secondary/15"></div>
@@ -81,7 +85,7 @@ export default function MissionVision() {
             viewport={{ once: true }}
             className="text-4xl font-bold text-gray-900 mb-4"
           >
-            Our Mission & Vision
+            {t('Our Mission & Vision', 'رسالتنا ورؤيتنا')}
           </motion.h2>
           <motion.div 
             initial={{ scale: 0 }}
@@ -107,13 +111,20 @@ export default function MissionVision() {
                 <div className="p-3 bg-brand-secondary/10 rounded-xl">
                   <AnimatedTarget />
                 </div>
-                <h3 className="text-2xl font-bold text-brand-primary ml-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-brand-primary ml-4">{t('Our Mission', 'رسالتنا')}</h3>
               </div>
               <p className="text-lg text-brand-primary/70 leading-relaxed mb-6">
-                Delivering excellence in auditing and consultancy services through innovative solutions and unwavering commitment to quality.
+                {t(
+                  'Delivering excellence in auditing and consultancy services through innovative solutions and unwavering commitment to quality.',
+                  'تقديم التميز في خدمات التدقيق والاستشارات عبر حلول مبتكرة والتزام راسخ بالجودة.'
+                )}
               </p>
               <ul className="space-y-3">
-                {['Professional Excellence', 'Client Satisfaction', 'Innovative Solutions'].map((item) => (
+                {[
+                  t('Professional Excellence', 'إتقان مهني'),
+                  t('Client Satisfaction', 'رضا العملاء'),
+                  t('Innovative Solutions', 'حلول مبتكرة')
+                ].map((item) => (
                   <li key={item} className="flex items-center text-gray-700">
                     <ArrowRight className="w-5 h-5 text-brand-secondary mr-2" />
                     {item}
@@ -137,13 +148,20 @@ export default function MissionVision() {
                 <div className="p-3 bg-brand-secondary/10 rounded-xl">
                   <AnimatedEye />
                 </div>
-                <h3 className="text-2xl font-bold text-brand-primary ml-4">Our Vision</h3>
+                <h3 className="text-2xl font-bold text-brand-primary ml-4">{t('Our Vision', 'رؤيتنا')}</h3>
               </div>
               <p className="text-lg text-brand-primary/70 leading-relaxed mb-6">
-                Shaping the future of financial services in Qatar by setting new standards of excellence and innovation in auditing and consultancy.
+                {t(
+                  'Shaping the future of financial services in Qatar by setting new standards of excellence and innovation in auditing and consultancy.',
+                  'صناعة مستقبل الخدمات المالية في قطر بوضع معايير جديدة للتميز والابتكار في التدقيق والاستشارات.'
+                )}
               </p>
               <ul className="space-y-3">
-                {['Industry Leadership', 'Continuous Innovation', 'Regional Excellence'].map((item) => (
+                {[
+                  t('Industry Leadership', 'الريادة في القطاع'),
+                  t('Continuous Innovation', 'ابتكار مستمر'),
+                  t('Regional Excellence', 'تميز إقليمي')
+                ].map((item) => (
                   <li key={item} className="flex items-center text-gray-700">
                     <ArrowRight className="w-5 h-5 text-brand-secondary mr-2" />
                     {item}

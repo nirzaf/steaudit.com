@@ -3,10 +3,14 @@
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import { useLocale } from './LocaleProvider';
 
 export default function Hero() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <div id="home" className="relative min-h-screen">
+    <div id="home" className="relative min-h-screen" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero Image with Overlay */}
       <div className="absolute inset-0">
         <motion.div
@@ -57,7 +61,7 @@ export default function Hero() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-lg text-brand-accent font-semibold tracking-wide mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
                 >
-                  Goodbye to Accounting Problems
+                  {t('Goodbye to Accounting Problems', 'وداعاً لمشاكل المحاسبة')}
                 </motion.p>
 
                 {/* Main Title */}
@@ -68,10 +72,10 @@ export default function Hero() {
                   className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl mb-6"
                 >
                   <span className="block text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
-                    Salem Taleb Efaifa
+                    {t('Salem Taleb Efaifa', 'سالم طالب عفيفة')}
                   </span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-brand-accent mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] [text-shadow:_0_4px_8px_rgb(0_0_0_/_90%)]" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.9))' }}>
-                    Auditing & Consultancy in Qatar
+                    {t('Auditing & Consultancy in Qatar', 'خدمات التدقيق والاستشارات في قطر')}
                   </span>
                 </motion.h1>
 
@@ -82,7 +86,10 @@ export default function Hero() {
                   transition={{ duration: 0.6, delay: 1 }}
                   className="mt-3 text-lg text-white sm:mt-5 sm:text-xl max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
                 >
-                  Based in Doha, Qatar, Salem Taleb Efaifa Auditing and Consultancy is part of a global alliance of expert firms providing high-quality professional services and advice.
+                  {t(
+                    'Based in Doha, Qatar, Salem Taleb Efaifa Auditing and Consultancy is part of a global alliance of expert firms providing high-quality professional services and advice.',
+                    'مقرنا الدوحة، قطر، وسالم طالب عفيفة للتدقيق والاستشارات عضو في تحالف عالمي يضم نخبة من الخبراء لتقديم خدمات مهنية واستشارات عالية الجودة.'
+                  )}
                 </motion.p>
 
                 {/* Buttons */}
@@ -99,7 +106,7 @@ export default function Hero() {
                   >
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-accent to-brand-secondary opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-center justify-center whitespace-nowrap text-sm sm:text-base">
-                      <span>Contact Us</span>
+                      <span>{t('Contact Us', 'تواصل معنا')}</span>
                       <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </Link>
@@ -111,7 +118,7 @@ export default function Hero() {
                   >
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-secondary/20 to-brand-accent/20 opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-center justify-center whitespace-nowrap text-sm sm:text-base">
-                      <span>Our Services</span>
+                      <span>{t('Our Services', 'خدماتنا')}</span>
                       <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </a>

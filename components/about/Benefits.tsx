@@ -2,27 +2,36 @@
 
 import { Heart, DollarSign, Clock4, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLocale } from '../LocaleProvider';
 
 const benefits = [
-  { 
+  {
     name: 'We Do Things With Love And Passion',
+    nameAr: 'نعمل بحب وشغف',
     description: 'Every project is handled with utmost care and dedication to ensure exceptional quality and outstanding results.',
-    icon: Heart 
+    descriptionAr: 'يتم التعامل مع كل مشروع بأقصى قدر من العناية والتفاني لضمان جودة استثنائية ونتائج متميزة.',
+    icon: Heart
   },
-  { 
+  {
     name: 'Affordable Price Range',
+    nameAr: 'نطاق أسعار معقول',
     description: 'Competitive pricing without compromising on the quality of our services, delivering maximum value for your investment.',
-    icon: DollarSign 
+    descriptionAr: 'أسعار تنافسية دون المساس بجودة خدماتنا، مع تقديم أقصى قيمة لاستثمارك.',
+    icon: DollarSign
   },
-  { 
+  {
     name: 'Receive on Time',
+    nameAr: 'التسليم في الوقت المحدد',
     description: 'We value your time and ensure timely delivery of all our commitments, maintaining strict adherence to project schedules.',
-    icon: Clock4 
+    descriptionAr: 'نقدر وقتك ونضمن التسليم في الوقت المناسب لجميع التزاماتنا، مع الالتزام الصارم بجداول المشروع.',
+    icon: Clock4
   },
-  { 
+  {
     name: 'Satisfaction Guaranteed',
+    nameAr: 'ضمان الرضا',
     description: 'Your satisfaction is our priority, backed by our commitment to excellence and continuous support throughout the process.',
-    icon: CheckCircle2 
+    descriptionAr: 'رضاك هو أولويتنا، مدعومًا بالتزامنا بالتميز والدعم المستمر طوال العملية.',
+    icon: CheckCircle2
   }
 ];
 
@@ -49,14 +58,16 @@ const itemVariants = {
 };
 
 export default function Benefits() {
+  const { locale, isRTL } = useLocale();
+
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-brand-neutral/60 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white to-brand-neutral/60 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(43,108,176,0.08),transparent_40%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(56,178,172,0.08),transparent_40%)] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -64,7 +75,7 @@ export default function Benefits() {
           viewport={{ once: true }}
         >
           {benefits.map((benefit) => (
-            <motion.div 
+            <motion.div
               key={benefit.name}
               variants={itemVariants}
               className="group h-full"
@@ -72,7 +83,7 @@ export default function Benefits() {
               <div className="relative p-8 rounded-3xl bg-white/85 backdrop-blur-xl border border-brand-secondary/10 shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_20px_40px_rgba(15,23,42,0.12)] transition-shadow duration-500 h-full flex flex-col">
                 <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-brand-secondary/25 to-transparent"></div>
                 <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-brand-secondary/25 to-transparent"></div>
-                
+
                 <div className="relative flex flex-col flex-1">
                   {/* Icon container with gradient background */}
                   <div className="mb-6 relative">
@@ -85,10 +96,10 @@ export default function Benefits() {
                   {/* Text content */}
                   <div className="flex flex-col flex-1 justify-between">
                     <h3 className="text-xl font-medium text-gray-900 mb-3 text-center">
-                      {benefit.name}
+                      {locale === 'ar' ? benefit.nameAr : benefit.name}
                     </h3>
                     <p className="text-gray-600 text-center text-sm leading-relaxed">
-                      {benefit.description}
+                      {locale === 'ar' ? benefit.descriptionAr : benefit.description}
                     </p>
                   </div>
                 </div>

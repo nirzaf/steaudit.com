@@ -1,10 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLocale } from './LocaleProvider';
 
 export default function About() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <div id="about" className="relative bg-gradient-to-b from-[#000000]/5 to-[#000000]/10 py-20 overflow-hidden">
+    <div id="about" className="relative bg-gradient-to-b from-[#000000]/5 to-[#000000]/10 py-20 overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0">
@@ -23,7 +27,7 @@ export default function About() {
           <div className="flex items-center justify-center space-x-4 mb-6">
             <div className="h-0.5 w-12 bg-[#2F7EAE]"></div>
             <h2 className="text-4xl font-medium tracking-tight text-[#000000] sm:text-5xl">
-              Our Commitment to Excellence
+              {t('Our Commitment to Excellence', 'التزامنا بالتميز')}
             </h2>
             <div className="h-0.5 w-12 bg-[#2F7EAE]"></div>
           </div>
@@ -47,9 +51,12 @@ export default function About() {
                   className="w-24 h-24 rounded-lg object-cover shadow-md"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold text-[#000000] mb-3">Professional Excellence</h3>
+                  <h3 className="text-xl font-semibold text-[#000000] mb-3">{t('Professional Excellence', 'إتقان مهني')}</h3>
                   <p className="text-[#000000]/70 leading-relaxed">
-                    Salem Taleb Efaifa Auditing and consultancy is an organization of substance with a full-service capability available in Qatar.
+                    {t(
+                      'Salem Taleb Efaifa Auditing and consultancy is an organization of substance with a full-service capability available in Qatar.',
+                      'سالم طالب عفيفة للتدقيق والاستشارات هي مؤسسة راسخة تقدم خدمات متكاملة في قطر.'
+                    )}
                   </p>
                 </div>
               </div>
@@ -69,9 +76,12 @@ export default function About() {
                   className="w-24 h-24 rounded-lg object-cover shadow-md"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold text-[#000000] mb-3">Tailored Solutions</h3>
+                  <h3 className="text-xl font-semibold text-[#000000] mb-3">{t('Tailored Solutions', 'حلول مصممة خصيصاً')}</h3>
                   <p className="text-[#000000]/70 leading-relaxed">
-                    We construct our team to reflect your organization structure. We make all aspects of our service delivery transparent to the client.
+                    {t(
+                      'We construct our team to reflect your organization structure. We make all aspects of our service delivery transparent to the client.',
+                      'نشكّل فريقنا بما يعكس هيكل مؤسستك، ونجعل جميع جوانب تقديم الخدمة واضحة وشفافة للعميل.'
+                    )}
                   </p>
                 </div>
               </div>
@@ -91,9 +101,12 @@ export default function About() {
                   className="w-24 h-24 rounded-lg object-cover shadow-md"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold text-[#000000] mb-3">Exceeding Expectations</h3>
+                  <h3 className="text-xl font-semibold text-[#000000] mb-3">{t('Exceeding Expectations', 'تجاوز التوقعات')}</h3>
                   <p className="text-[#000000]/70 leading-relaxed">
-                    Our aim is to beat your expectations from any assignments, bringing our views about business operations and compliance.
+                    {t(
+                      'Our aim is to beat your expectations from any assignments, bringing our views about business operations and compliance.',
+                      'هدفنا هو تجاوز توقعاتك في كل مهمة، مع تقديم رؤيتنا حول العمليات والالتزام التنظيمي.'
+                    )}
                   </p>
                 </div>
               </div>

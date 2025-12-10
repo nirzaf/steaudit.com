@@ -1,10 +1,14 @@
+'use client';
+
+import { useLocale } from '../LocaleProvider';
+
 const features = [
-  { name: 'Business Growth', iconType: 'target' },
-  { name: 'Unlimited Revision', iconType: 'clock' },
-  { name: 'Ultimate Perfection', iconType: 'star' },
-  { name: 'Smart Experience', iconType: 'briefcase' },
-  { name: 'Strict Deadline', iconType: 'calendar' },
-  { name: 'Reputed Firm', iconType: 'medal' },
+  { name: 'Business Growth', nameAr: 'نمو الأعمال', iconType: 'target' },
+  { name: 'Unlimited Revision', nameAr: 'مراجعة غير محدودة', iconType: 'clock' },
+  { name: 'Ultimate Perfection', nameAr: 'الكمال النهائي', iconType: 'star' },
+  { name: 'Smart Experience', nameAr: 'تجربة ذكية', iconType: 'briefcase' },
+  { name: 'Strict Deadline', nameAr: 'موعد نهائي صارم', iconType: 'calendar' },
+  { name: 'Reputed Firm', nameAr: 'شركة ذات سمعة طيبة', iconType: 'medal' },
 ];
 
 const renderIcon = (type: string) => {
@@ -65,11 +69,14 @@ const renderIcon = (type: string) => {
 };
 
 export default function WhyChooseUs() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('Why Choose Us?', 'لماذا تختارنا؟')}</h2>
           <div className="w-24 h-1 bg-brand-secondary mx-auto rounded-full"></div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -87,10 +94,10 @@ export default function WhyChooseUs() {
                   </div>
                 </div>
                 <span className="block font-bold text-xl text-brand-primary group-hover:text-brand-secondary transition-colors duration-500 mb-3">
-                  {feature.name}
+                  {locale === 'ar' ? feature.nameAr : feature.name}
                 </span>
                 <p className="text-brand-primary/70 text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Discover excellence in every detail of our professional services.
+                  {t('Discover excellence in every detail of our professional services.', 'اكتشف التميز في كل تفاصيل خدماتنا المهنية.')}
                 </p>
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Globe, Users, MapPin, Handshake } from 'lucide-react';
+import { useLocale } from './LocaleProvider';
 
 const stats = [
   {
@@ -39,8 +40,11 @@ const stats = [
 ];
 
 export default function PrimeGlobal() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute transform rotate-12 -right-40 -top-40 w-96 h-96 rounded-full bg-blue-500"></div>
@@ -55,16 +59,17 @@ export default function PrimeGlobal() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-4xl font-bold text-brand-primary mb-6 text-left max-w-6xl mx-auto">
-            Proud Member of PrimeGlobal
+          <h2 className={`text-4xl font-bold text-brand-primary mb-6 ${isRTL ? 'text-right' : 'text-left'} max-w-6xl mx-auto`}>
+            {t('Proud Member of PrimeGlobal', 'عضو فخور في PrimeGlobal')}
           </h2>
 
           <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
             <div className="md:w-2/3">
-              <p className="text-gray-600 text-lg leading-relaxed text-left">
-                PrimeGlobal's independent member firms house a combined total of over 3,000 partners, 28,000 employees,
-                and upwards of 940 locations in more than 100 countries around the globe. PrimeGlobal members are typically
-                full service, regional, public accounting and business advisory firms.
+              <p className={`text-gray-600 text-lg leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t(
+                  "PrimeGlobal's independent member firms house a combined total of over 3,000 partners, 28,000 employees, and upwards of 940 locations in more than 100 countries around the globe. PrimeGlobal members are typically full service, regional, public accounting and business advisory firms.",
+                  'يضم أعضاء PrimeGlobal أكثر من 3,000 شريك و28,000 موظف في ما يزيد عن 940 موقعاً ضمن أكثر من 100 دولة حول العالم، وغالباً ما تكون شركات خدمات محاسبية واستشارات أعمال متكاملة.'
+                )}
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center items-center">
@@ -87,7 +92,7 @@ export default function PrimeGlobal() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -106,10 +111,19 @@ export default function PrimeGlobal() {
                   {stat.value}
                 </div>
                 <div className="text-brand-primary/70 text-sm">
-                  {stat.label}
+                  {t(stat.label, stat.label === 'Partners' ? 'شركاء' : stat.label === 'Employees' ? 'موظفون' : stat.label === 'Locations' ? 'مواقع' : 'دول')}
                 </div>
                 <div className="text-brand-primary/60 text-xs mt-2">
-                  {stat.description}
+                  {t(
+                    stat.description,
+                    stat.description === 'Collaborating across firms'
+                      ? 'يتعاونون عبر الشركات الأعضاء'
+                      : stat.description === 'Dedicated professionals'
+                        ? 'خبراء ملتزمون'
+                        : stat.description === 'Offices worldwide'
+                          ? 'مكاتب حول العالم'
+                          : 'حضور عالمي'
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -124,9 +138,11 @@ export default function PrimeGlobal() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-600 italic max-w-3xl mx-auto">
-            "As the international association serving these firms, PrimeGlobal is built first and foremost on strong relationships,
-            and our purpose is to be a source for ideas and access to member firm expertise and fundamental standards for success."
+              <p className="text-gray-600 italic max-w-3xl mx-auto">
+                {t(
+                  '"As the international association serving these firms, PrimeGlobal is built first and foremost on strong relationships, and our purpose is to be a source for ideas and access to member firm expertise and fundamental standards for success."',
+                  'بصفتنا جمعية دولية تخدم هذه الشركات، يقوم PrimeGlobal أولاً وأساساً على علاقات قوية، وهدفنا أن نكون مصدراً للأفكار والوصول إلى خبرات الأعضاء والمعايير الأساسية للنجاح.'
+                )}
           </p>
         </motion.div>
       </div>

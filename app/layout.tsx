@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
 import { SITE_URL, buildMetadata } from '@/lib/metadata';
 import { organizationSchema } from '@/lib/structuredData';
+import { LocaleProvider } from '@/components/LocaleProvider';
 import './globals.css';
 
 const inter = Inter({
@@ -46,10 +47,12 @@ export default function RootLayout({
                 />
             </head>
             <body className="font-sans min-h-screen bg-site-bg antialiased">
-                <Navbar />
-                {children}
-                <Footer />
-                <Toaster position="top-right" />
+                <LocaleProvider>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                    <Toaster position="top-right" />
+                </LocaleProvider>
                 <Script
                     id="hs-script-loader"
                     src="//js-eu1.hs-scripts.com/144768548.js"

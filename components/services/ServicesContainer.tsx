@@ -1,8 +1,10 @@
 import ServicesList from './ServicesList';
 import { Service } from '../../types/service';
 
+type DisplayService = Omit<Service, 'icon'>;
+
 interface ServicesContainerProps {
-  services: Service[];
+  services: DisplayService[];
 }
 
 const ServicesContainer = ({ services }: ServicesContainerProps) => {

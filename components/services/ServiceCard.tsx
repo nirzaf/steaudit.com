@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import ServiceIcon from './ServiceIcon';
+import { useLocale } from '../LocaleProvider';
 
 interface ServiceCardProps {
   title: string;
@@ -9,6 +10,8 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, description, index }: ServiceCardProps) => {
+  const { isRTL } = useLocale();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +22,7 @@ const ServiceCard = ({ title, description, index }: ServiceCardProps) => {
       <div className="h-full flex flex-col rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-transparent group-hover:-translate-y-1">
         <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-brand-secondary/30 via-brand-accent/30 to-brand-accent-alt/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="flex-1 p-8 flex flex-col justify-between gap-6">
-          <div className="flex-1 flex flex-col items-center text-center gap-4">
+          <div className={`flex-1 flex flex-col items-center text-center gap-4 ${isRTL ? 'rtl' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
             <div className="w-full flex justify-center">
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-brand-secondary/10 to-brand-accent/15 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_12px_40px_rgba(56,178,172,0.15)]">
                 <ServiceIcon title={title} />

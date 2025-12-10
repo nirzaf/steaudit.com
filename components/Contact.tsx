@@ -5,8 +5,12 @@ import { HiPhone, HiMail, HiLocationMarker, HiExternalLink } from 'react-icons/h
 import { supabase } from '../lib/supabase';
 import type { ContactFormData } from '../types/contact';
 import { toast } from 'react-hot-toast';
+import { useLocale } from './LocaleProvider';
 
 export default function Contact() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -56,7 +60,7 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="relative bg-white overflow-hidden">
+    <div id="contact" className="relative bg-white overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,32,74,0.03),transparent_40%)] pointer-events-none"></div>
@@ -67,7 +71,7 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-brand-primary mb-4">
-            Get in Touch
+            {t('Get in Touch', 'تواصل معنا')}
           </h2>
           <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-brand-primary/20 to-transparent"></div>
         </div>
@@ -76,27 +80,29 @@ export default function Contact() {
         <div className="mb-12">
           <div className="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300 border border-brand-primary/10">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold text-brand-primary mb-6 text-center">Business Hours</h3>
+              <h3 className="text-2xl font-semibold text-brand-primary mb-6 text-center">
+                {t('Business Hours', 'ساعات العمل')}
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-brand-primary/5 rounded-lg p-6">
                   <div className="text-center">
-                    <h4 className="font-medium text-brand-primary mb-3">Weekdays</h4>
-                    <p className="text-brand-primary/70">Sunday - Thursday</p>
-                    <p className="text-brand-primary font-medium">8:00 AM - 6:00 PM</p>
+                    <h4 className="font-medium text-brand-primary mb-3">{t('Weekdays', 'أيام الأسبوع')}</h4>
+                    <p className="text-brand-primary/70">{t('Sunday - Thursday', 'الأحد - الخميس')}</p>
+                    <p className="text-brand-primary font-medium">{t('8:00 AM - 6:00 PM', '8:00 صباحاً - 6:00 مساءً')}</p>
                   </div>
                 </div>
                 <div className="bg-brand-primary/5 rounded-lg p-6">
                   <div className="text-center">
-                    <h4 className="font-medium text-brand-primary mb-3">Saturday</h4>
-                    <p className="text-brand-primary/70">Weekend</p>
-                    <p className="text-brand-primary font-medium">9:00 AM - 3:00 PM</p>
+                    <h4 className="font-medium text-brand-primary mb-3">{t('Saturday', 'السبت')}</h4>
+                    <p className="text-brand-primary/70">{t('Weekend', 'نهاية الأسبوع')}</p>
+                    <p className="text-brand-primary font-medium">{t('9:00 AM - 3:00 PM', '9:00 صباحاً - 3:00 مساءً')}</p>
                   </div>
                 </div>
                 <div className="bg-brand-primary/5 rounded-lg p-6">
                   <div className="text-center">
-                    <h4 className="font-medium text-brand-primary mb-3">Friday</h4>
-                    <p className="text-brand-primary/70">Weekend</p>
-                    <p className="text-brand-primary font-medium">Closed</p>
+                    <h4 className="font-medium text-brand-primary mb-3">{t('Friday', 'الجمعة')}</h4>
+                    <p className="text-brand-primary/70">{t('Weekend', 'نهاية الأسبوع')}</p>
+                    <p className="text-brand-primary font-medium">{t('Closed', 'مغلق')}</p>
                   </div>
                 </div>
               </div>
@@ -115,7 +121,7 @@ export default function Contact() {
                     <HiPhone className="w-6 h-6 text-brand-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-brand-primary mb-1">Phone</h3>
+                    <h3 className="text-xl font-semibold text-brand-primary mb-1">{t('Phone', 'هاتف')}</h3>
                     <a 
                       href="tel:+97450008194" 
                       className="text-lg text-brand-primary/80 hover:text-brand-primary hover:underline"
@@ -133,7 +139,7 @@ export default function Contact() {
                     <HiMail className="w-6 h-6 text-brand-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-brand-primary mb-1">Email</h3>
+                    <h3 className="text-xl font-semibold text-brand-primary mb-1">{t('Email', 'البريد الإلكتروني')}</h3>
                     <a 
                       href="mailto:info@steaudit.com" 
                       className="text-lg text-brand-primary/80 hover:text-brand-primary hover:underline"
@@ -149,7 +155,9 @@ export default function Contact() {
             <div className="bg-white rounded-xl shadow-lg p-8 border border-brand-primary/10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-brand-primary/90">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-brand-primary/90">
+                    {t('Name', 'الاسم')}
+                  </label>
                   <input
                     type="text"
                     id="name"
@@ -158,11 +166,13 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="mt-1 block w-full px-4 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-md shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-primary placeholder-brand-primary/50"
-                    placeholder="Your name"
+                    placeholder={t('Your name', 'اسمك')}
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-brand-primary/90">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-brand-primary/90">
+                    {t('Email', 'البريد الإلكتروني')}
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -171,34 +181,34 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="mt-1 block w-full px-4 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-md shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-primary placeholder-brand-primary/50"
-                    placeholder="your@email.com"
+                    placeholder={t('your@email.com', 'your@email.com')}
                   />
                 </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-brand-primary/90">Subject</label>
+              <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-brand-primary/90">{t('Subject', 'الموضوع')}</label>
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full px-4 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-md shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-primary placeholder-brand-primary/50"
-                    placeholder="Subject of your message"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-brand-primary/90">Message</label>
-                  <textarea
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 block w-full px-4 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-md shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-primary placeholder-brand-primary/50"
+                  placeholder={t('Subject of your message', 'موضوع رسالتك')}
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-brand-primary/90">{t('Message', 'الرسالة')}</label>
+                <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
-                    rows={4}
-                    className="mt-1 block w-full px-4 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-md shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-primary placeholder-brand-primary/50"
-                    placeholder="Your message"
-                  ></textarea>
+                  required
+                  rows={4}
+                  className="mt-1 block w-full px-4 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-md shadow-sm focus:ring-2 focus:ring-brand-primary focus:border-transparent text-brand-primary placeholder-brand-primary/50"
+                  placeholder={t('Your message', 'رسالتك')}
+                ></textarea>
                 </div>
                 <button
                   type="submit"
@@ -209,7 +219,7 @@ export default function Contact() {
                       : 'hover:bg-brand-primary/90'
                   }`}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? t('Sending...', 'جاري الإرسال...') : t('Send Message', 'إرسال الرسالة')}
                 </button>
               </form>
             </div>
@@ -240,23 +250,23 @@ export default function Contact() {
                         <HiLocationMarker className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-brand-primary mb-2">Muaither Office</h3>
-                        <p className="text-brand-primary/70 leading-relaxed">
-                          Office No. 4, Building No. 3,<br />
-                          Street No. 902, Zone No. 55,<br />
-                          Muaither Area, Qatar
-                        </p>
-                        <a 
-                          href="https://maps.app.goo.gl/zVLPxbrQbEnaJx4R7"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center mt-3 text-sm text-brand-primary/80 hover:text-brand-primary hover:underline"
-                        >
-                          View on Google Maps <HiExternalLink className="ml-1" />
-                        </a>
-                      </div>
-                    </div>
+                    <h3 className="text-xl font-semibold text-brand-primary mb-2">{t('Muaither Office', 'مكتب المعِيذر')}</h3>
+                    <p className="text-brand-primary/70 leading-relaxed">
+                      {t('Office No. 4, Building No. 3,', 'مكتب رقم 4، مبنى رقم 3،')}<br />
+                      {t('Street No. 902, Zone No. 55,', 'شارع رقم 902، منطقة رقم 55،')}<br />
+                      {t('Muaither Area, Qatar', 'منطقة المعيذر، قطر')}
+                    </p>
+                    <a 
+                      href="https://maps.app.goo.gl/zVLPxbrQbEnaJx4R7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-3 text-sm text-brand-primary/80 hover:text-brand-primary hover:underline"
+                    >
+                      {t('View on Google Maps', 'عرض على خرائط جوجل')} <HiExternalLink className="ml-1" />
+                    </a>
                   </div>
+                </div>
+              </div>
                 </div>
 
                 {/* Umm Ghuwalina Office */}
@@ -279,23 +289,23 @@ export default function Contact() {
                         <HiLocationMarker className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-brand-primary mb-2">Umm Ghuwalina Office</h3>
-                        <p className="text-brand-primary/70 leading-relaxed">
-                          Flat No. 2, Floor No. 1,<br />
-                          Street No. 220, Building No. 9,<br />
-                          Zone 27, Umm Ghuwalina, Qatar
-                        </p>
-                        <a 
-                          href="https://maps.app.goo.gl/Evu1fY4TYMzaqma5A"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center mt-3 text-sm text-brand-primary/80 hover:text-brand-primary hover:underline"
-                        >
-                          View on Google Maps <HiExternalLink className="ml-1" />
-                        </a>
-                      </div>
-                    </div>
+                    <h3 className="text-xl font-semibold text-brand-primary mb-2">{t('Umm Ghuwalina Office', 'مكتب أم غويلينة')}</h3>
+                    <p className="text-brand-primary/70 leading-relaxed">
+                      {t('Flat No. 2, Floor No. 1,', 'شقة رقم 2، الطابق الأول،')}<br />
+                      {t('Street No. 220, Building No. 9,', 'شارع رقم 220، مبنى رقم 9،')}<br />
+                      {t('Zone 27, Umm Ghuwalina, Qatar', 'منطقة 27، أم غويلينة، قطر')}
+                    </p>
+                    <a 
+                      href="https://maps.app.goo.gl/Evu1fY4TYMzaqma5A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-3 text-sm text-brand-primary/80 hover:text-brand-primary hover:underline"
+                    >
+                      {t('View on Google Maps', 'عرض على خرائط جوجل')} <HiExternalLink className="ml-1" />
+                    </a>
                   </div>
+                </div>
+              </div>
                 </div>
               </div>
             </div>

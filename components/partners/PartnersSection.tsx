@@ -2,12 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { Award, Briefcase, CheckCircle2 } from 'lucide-react';
+import { useLocale } from '../LocaleProvider';
 
 interface Partner {
   name: string;
+  nameAr?: string;
   title: string;
+  titleAr?: string;
   image: string;
   description: string[];
+  descriptionAr?: string[];
 }
 
 interface PartnersSectionProps {
@@ -15,8 +19,13 @@ interface PartnersSectionProps {
 }
 
 export default function PartnersSection({ partners }: PartnersSectionProps) {
+  const { locale, isRTL } = useLocale();
+
+  const getText = (en?: string, ar?: string) => (locale === 'ar' && ar ? ar : en ?? '');
+  const descriptions = (item: Partner) => (locale === 'ar' && item.descriptionAr ? item.descriptionAr : item.description);
+
   return (
-    <section className="py-20 bg-gradient-to-b from-brand-primary/5 via-white to-[#00204A]/5 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-brand-primary/5 via-white to-[#00204A]/5 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Enhanced Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,53,0.08),transparent_50%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.08),transparent_50%)] pointer-events-none"></div>
@@ -51,7 +60,7 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
                         {/* Image */}
                         <img
                           src={partner.image}
-                          alt={partner.name}
+                          alt={getText(partner.name, partner.nameAr)}
                           className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-110"
                         />
 
@@ -84,25 +93,25 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
                     </div>
 
                     {/* Content Section */}
-                    <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center relative">
+                    <div className={`md:w-3/5 p-8 md:p-12 flex flex-col justify-center relative ${isRTL ? 'text-right' : ''}`}>
                       {/* Decorative accent bar */}
-                      <div className="absolute left-0 top-12 bottom-12 w-1 bg-gradient-to-b from-transparent via-brand-accent to-transparent opacity-40"></div>
+                      <div className={`absolute top-12 bottom-12 w-1 bg-gradient-to-b from-transparent via-brand-accent to-transparent opacity-40 ${isRTL ? 'right-0' : 'left-0'}`}></div>
 
                       <div className="space-y-6">
                         {/* Header */}
                         <div className="space-y-3">
                           {/* Name with gradient */}
                           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-brand-primary via-brand-primary to-[#00204A]/80 bg-clip-text text-transparent leading-tight">
-                            {partner.name}
+                            {getText(partner.name, partner.nameAr)}
                           </h2>
 
                           {/* Title with icon */}
-                          <div className="flex items-center gap-3">
-                            <div className="h-px flex-1 max-w-[60px] bg-gradient-to-r from-brand-accent to-transparent"></div>
+                          <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                            <div className={`h-px flex-1 max-w-[60px] bg-gradient-to-r from-brand-accent to-transparent ${isRTL ? 'rotate-180' : ''}`}></div>
                             <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-accent/10 to-brand-accent-alt/10 rounded-full border border-brand-accent/20">
                               <Briefcase className="w-4 h-4 text-brand-accent" strokeWidth={2} />
                               <p className="text-brand-primary font-semibold text-sm tracking-wide">
-                                {partner.title}
+                                {getText(partner.title, partner.titleAr)}
                               </p>
                             </div>
                           </div>
@@ -110,13 +119,11 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
 
                         {/* Description */}
                         <div className="space-y-4 pt-2">
-                          {partner.description.map((paragraph, i) => (
-                            <div key={i} className="flex gap-3 group/item">
-                              {/* Bullet point */}
+                          {descriptions(partner).map((paragraph, i) => (
+                            <div key={i} className={`flex gap-3 group/item ${isRTL ? 'flex-row-reverse' : ''}`}>
                               <div className="flex-shrink-0 mt-1.5">
                                 <CheckCircle2 className="w-4 h-4 text-brand-accent opacity-60 group-hover/item:opacity-100 transition-opacity" strokeWidth={2} />
                               </div>
-                              {/* Text */}
                               <p className={`leading-relaxed transition-colors ${i === 0
                                   ? 'text-brand-primary/90 font-medium text-base'
                                   : 'text-brand-primary/70 text-sm'

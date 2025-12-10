@@ -17,14 +17,15 @@ export default function ServicesPage() {
         { name: 'Services', path: '/services' },
     ]);
 
-    const servicesSchema = buildServicesStructuredData(services);
+    const safeServices = services.map(({ icon, ...rest }) => rest);
+    const servicesSchema = buildServicesStructuredData(safeServices);
 
     return (
         <div className="pt-20">
             <JsonLd data={breadcrumbList} id="breadcrumb-services" />
             <JsonLd data={servicesSchema} id="services-schema" />
             <HeroSection />
-            <ServicesContainer services={services} />
+            <ServicesContainer services={safeServices} />
         </div>
     );
 }

@@ -3,10 +3,14 @@
 import { motion } from 'framer-motion';
 import ServiceIcon from './services/ServiceIcon';
 import { services as servicesData } from '../data/services';
+import { useLocale } from './LocaleProvider';
 
 export default function Services() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   return (
-    <div id="services" className="bg-gradient-to-b from-brand-neutral/60 via-white to-white pb-16 pt-24">
+    <div id="services" className="bg-gradient-to-b from-brand-neutral/60 via-white to-white pb-16 pt-24" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 1, y: 0 }}
@@ -16,10 +20,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-brand-primary mb-4">
-            Our Services
+            {t('Our Services', 'خدماتنا')}
           </h2>
           <p className="text-xl text-brand-primary/70 max-w-2xl mx-auto">
-            Comprehensive solutions for your business needs
+            {t('Comprehensive solutions for your business needs', 'حلول متكاملة لتلبية احتياجات عملك')}
           </p>
         </motion.div>
 
@@ -39,10 +43,10 @@ export default function Services() {
                   <ServiceIcon title={service.title} />
                 </div>
                 <h3 className="text-xl font-semibold text-brand-primary group-hover:text-brand-secondary transition-colors duration-300">
-                  {service.title}
+                  {locale === 'ar' ? service.titleAr : service.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {service.description}
+                  {locale === 'ar' ? service.descriptionAr : service.description}
                 </p>
               </div>
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-secondary to-brand-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />

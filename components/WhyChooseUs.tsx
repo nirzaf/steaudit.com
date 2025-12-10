@@ -1,45 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
-const features = [
-  {
-    name: 'Business Growth',
-    description: 'We help accelerate your business growth with expert guidance.',
-    iconType: 'target',
-    gradient: 'from-brand-secondary to-brand-accent',
-  },
-  {
-    name: 'Unlimited Revision',
-    description: 'We ensure complete satisfaction through unlimited revisions.',
-    iconType: 'clock',
-    gradient: 'from-brand-accent to-brand-accent-alt',
-  },
-  {
-    name: 'Ultimate Perfection',
-    description: 'We strive for excellence in every service we provide.',
-    iconType: 'star',
-    gradient: 'from-brand-secondary to-brand-accent-alt',
-  },
-  {
-    name: 'Smart Experience',
-    description: 'Benefit from our years of industry expertise.',
-    iconType: 'case',
-    gradient: 'from-brand-primary to-brand-secondary',
-  },
-  {
-    name: 'Strict Deadline',
-    description: 'We respect and adhere to agreed timelines.',
-    iconType: 'calendar',
-    gradient: 'from-brand-secondary to-brand-primary',
-  },
-  {
-    name: 'Reputed Firm',
-    description: 'A trusted name in auditing and consultancy services.',
-    iconType: 'medal',
-    gradient: 'from-brand-accent to-brand-secondary',
-  },
-];
+import { useLocale } from './LocaleProvider';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -125,8 +87,89 @@ const renderIcon = (type: string) => {
 };
 
 export default function WhyChooseUs() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
+  const features = locale === 'ar'
+    ? [
+      {
+        name: 'نمو الأعمال',
+        description: 'نساعدك على تسريع نمو عملك بإرشاد الخبراء.',
+        iconType: 'target',
+        gradient: 'from-brand-secondary to-brand-accent',
+      },
+      {
+        name: 'مراجعات غير محدودة',
+        description: 'نضمن رضاك التام عبر مراجعات غير محدودة.',
+        iconType: 'clock',
+        gradient: 'from-brand-accent to-brand-accent-alt',
+      },
+      {
+        name: 'إتقان تام',
+        description: 'نسعى للتميز في كل خدمة نقدمها.',
+        iconType: 'star',
+        gradient: 'from-brand-secondary to-brand-accent-alt',
+      },
+      {
+        name: 'خبرة ذكية',
+        description: 'استفد من سنوات خبرتنا في القطاع.',
+        iconType: 'case',
+        gradient: 'from-brand-primary to-brand-secondary',
+      },
+      {
+        name: 'مواعيد صارمة',
+        description: 'نحترم الجداول الزمنية المتفق عليها ونلتزم بها.',
+        iconType: 'calendar',
+        gradient: 'from-brand-secondary to-brand-primary',
+      },
+      {
+        name: 'شركة ذات سمعة',
+        description: 'اسم موثوق في خدمات التدقيق والاستشارات.',
+        iconType: 'medal',
+        gradient: 'from-brand-accent to-brand-secondary',
+      },
+    ]
+    : [
+      {
+        name: 'Business Growth',
+        description: 'We help accelerate your business growth with expert guidance.',
+        iconType: 'target',
+        gradient: 'from-brand-secondary to-brand-accent',
+      },
+      {
+        name: 'Unlimited Revision',
+        description: 'We ensure complete satisfaction through unlimited revisions.',
+        iconType: 'clock',
+        gradient: 'from-brand-accent to-brand-accent-alt',
+      },
+      {
+        name: 'Ultimate Perfection',
+        description: 'We strive for excellence in every service we provide.',
+        iconType: 'star',
+        gradient: 'from-brand-secondary to-brand-accent-alt',
+      },
+      {
+        name: 'Smart Experience',
+        description: 'Benefit from our years of industry expertise.',
+        iconType: 'case',
+        gradient: 'from-brand-primary to-brand-secondary',
+      },
+      {
+        name: 'Strict Deadline',
+        description: 'We respect and adhere to agreed timelines.',
+        iconType: 'calendar',
+        gradient: 'from-brand-secondary to-brand-primary',
+      },
+      {
+        name: 'Reputed Firm',
+        description: 'A trusted name in auditing and consultancy services.',
+        iconType: 'medal',
+        gradient: 'from-brand-accent to-brand-secondary',
+      },
+    ];
+
   return (
-    <div className="py-20 bg-gradient-to-b from-brand-neutral/70 via-white to-white relative overflow-hidden">
+    <div className="py-20 bg-gradient-to-b from-brand-neutral/70 via-white to-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -right-32 -top-32 w-64 h-64 rounded-full bg-brand-secondary/10 blur-3xl" />
         <div className="absolute left-10 bottom-0 w-72 h-72 rounded-full bg-brand-accent/10 blur-3xl" />
@@ -134,13 +177,18 @@ export default function WhyChooseUs() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="lg:text-center mb-16">
-          <p className="text-base font-semibold tracking-wide uppercase text-brand-secondary">Our Advantages</p>
+          <p className="text-base font-semibold tracking-wide uppercase text-brand-secondary">
+            {t('Our Advantages', 'مزايا خدماتنا')}
+          </p>
           <h2 className="mt-2 text-4xl font-extrabold text-brand-primary sm:text-5xl">
-            Why Choose Us?
+            {t('Why Choose Us?', 'لماذا تختارنا؟')}
           </h2>
           <div className="mt-4 mx-auto w-24 h-1 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-full"></div>
           <p className="mt-6 max-w-3xl text-xl text-brand-primary/70 lg:mx-auto leading-relaxed">
-            We aim to add value to your organisation by offering practical suggestions to improve your systems and manage financial risks.
+            {t(
+              'We aim to add value to your organisation by offering practical suggestions to improve your systems and manage financial risks.',
+              'نهدف إلى إضافة قيمة حقيقية لمنظمتك عبر اقتراحات عملية لتحسين الأنظمة وإدارة المخاطر المالية.'
+            )}
           </p>
         </div>
 

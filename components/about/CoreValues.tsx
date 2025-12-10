@@ -1,10 +1,50 @@
+'use client';
+
+import { useLocale } from '../LocaleProvider';
+
 const values = [
-  { name: 'Integrity', iconType: 'shield', description: 'We exhibit fairness, honesty, and ethical behavior in our service to all our clients.' },
-  { name: 'Objectivity', iconType: 'compass', description: 'We perform duties in an unbiased manner based on informed analysis and clear understanding.' },
-  { name: 'Quality', iconType: 'star', description: 'We provide accurate reports and timely, relevant recommendations.' },
-  { name: 'Community', iconType: 'users', description: 'We collaborate with colleagues and clients to improve stakeholder effectiveness and efficiency.' },
-  { name: 'Visionary', iconType: 'eye', description: 'We develop creative and innovative approaches to key issues facing our clients.' },
-  { name: 'Trust & Confidentiality', iconType: 'lock', description: 'We maintain the highest standards of confidentiality and build lasting relationships on integrity.' }
+  {
+    name: 'Integrity',
+    nameAr: 'النزاهة',
+    iconType: 'shield',
+    description: 'We exhibit fairness, honesty, and ethical behavior in our service to all our clients.',
+    descriptionAr: 'نُظهر العدالة والصدق والسلوك الأخلاقي في خدماتنا لجميع عملائنا.'
+  },
+  {
+    name: 'Objectivity',
+    nameAr: 'الموضوعية',
+    iconType: 'compass',
+    description: 'We perform duties in an unbiased manner based on informed analysis and clear understanding.',
+    descriptionAr: 'نؤدي واجباتنا بطريقة محايدة بناءً على تحليل مستنير وفهم واضح.'
+  },
+  {
+    name: 'Quality',
+    nameAr: 'الجودة',
+    iconType: 'star',
+    description: 'We provide accurate reports and timely, relevant recommendations.',
+    descriptionAr: 'نقدم تقارير دقيقة وتوصيات ذات صلة وفي الوقت المناسب.'
+  },
+  {
+    name: 'Community',
+    nameAr: 'المجتمع',
+    iconType: 'users',
+    description: 'We collaborate with colleagues and clients to improve stakeholder effectiveness and efficiency.',
+    descriptionAr: 'نتعاون مع الزملاء والعملاء لتحسين فعالية وكفاءة أصحاب المصلحة.'
+  },
+  {
+    name: 'Visionary',
+    nameAr: 'الرؤية',
+    iconType: 'eye',
+    description: 'We develop creative and innovative approaches to key issues facing our clients.',
+    descriptionAr: 'نطور أساليب إبداعية ومبتكرة للقضايا الرئيسية التي تواجه عملاءنا.'
+  },
+  {
+    name: 'Trust & Confidentiality',
+    nameAr: 'الثقة والسرية',
+    iconType: 'lock',
+    description: 'We maintain the highest standards of confidentiality and build lasting relationships on integrity.',
+    descriptionAr: 'نحافظ على أعلى معايير السرية ونبني علاقات دائمة على أساس النزاهة.'
+  }
 ];
 
 const renderValueIcon = (type: string) => {
@@ -57,10 +97,14 @@ const renderValueIcon = (type: string) => {
 };
 
 export default function CoreValues() {
+  const { locale, isRTL } = useLocale();
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-12 text-center text-brand-primary">Our Core Values</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-brand-primary">
+          {locale === 'ar' ? 'قيمنا الأساسية' : 'Our Core Values'}
+        </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((value) => (
             <div
@@ -71,8 +115,12 @@ export default function CoreValues() {
                 <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-brand-secondary/10 text-brand-secondary hover:bg-brand-secondary/15 transition-colors duration-300">
                   {renderValueIcon(value.iconType)}
                 </div>
-                <h3 className="text-2xl font-bold text-brand-primary">{value.name}</h3>
-                <p className="text-brand-primary/70 leading-relaxed">{value.description}</p>
+                <h3 className="text-2xl font-bold text-brand-primary">
+                  {locale === 'ar' ? value.nameAr : value.name}
+                </h3>
+                <p className="text-brand-primary/70 leading-relaxed">
+                  {locale === 'ar' ? value.descriptionAr : value.description}
+                </p>
               </div>
             </div>
           ))}

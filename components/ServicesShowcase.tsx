@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FileText, Clock, Users, BarChart2, PieChart } from 'lucide-react';
 import Lottie from 'lottie-react';
+import { useLocale } from './LocaleProvider';
 
 // Import service icons animations
 import financialStatementAnimation from '@/public/assets/animations/financial-statement.json';
@@ -83,6 +84,9 @@ const services = [
 ];
 
 export default function ServicesShowcase() {
+  const { locale, isRTL } = useLocale();
+  const t = (en: string, ar: string) => (locale === 'ar' ? ar : en);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   const controls = useAnimation();
@@ -145,7 +149,7 @@ export default function ServicesShowcase() {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 10
       }
@@ -153,7 +157,7 @@ export default function ServicesShowcase() {
   };
 
   return (
-    <div className="py-24 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 relative">
+    <div className="py-24 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 relative" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-[100px] animate-blob"></div>
@@ -172,11 +176,11 @@ export default function ServicesShowcase() {
         >
           <h2 className="text-4xl font-bold text-white mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-              Exceptional Services
+              {t('Exceptional Services', 'خدمات استثنائية')}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Explore our comprehensive range of professional services
+            {t('Explore our comprehensive range of professional services', 'اكتشف مجموعتنا الشاملة من الخدمات المهنية')}
           </p>
         </motion.div>
 
