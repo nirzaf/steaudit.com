@@ -99,7 +99,7 @@ export default function AuditFilingBanner() {
                     >
                         {/* Why Choose Us */}
                         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 md:p-8">
-                            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-white">
                                 <span className="w-1 h-8 bg-blue-500 rounded-full"></span>
                                 WHY CHOOSE US
                             </h3>
@@ -121,7 +121,7 @@ export default function AuditFilingBanner() {
 
                         {/* Key Services */}
                         <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 md:p-8">
-                            <h3 className="text-xl font-bold mb-4 text-blue-300">OUR KEY SERVICES</h3>
+                            <h3 className="text-xl font-bold mb-4 text-white">OUR KEY SERVICES</h3>
                             <div className="grid sm:grid-cols-2 gap-3">
                                 {services.map((service, idx) => (
                                     <div key={idx} className="flex items-center gap-2 text-sm text-slate-100 font-medium">
