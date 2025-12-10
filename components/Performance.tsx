@@ -27,7 +27,7 @@ export default function Performance() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold tracking-tight"
+              className="text-4xl md:text-5xl font-bold tracking-tight !text-white"
             >
               Performance Through{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -63,16 +63,16 @@ export default function Performance() {
               className="grid grid-cols-3 gap-8 pt-8"
             >
               {[
-                  { number: '15+', label: 'Years Experience' },
-                  { number: '500+', label: 'Clients Served' },
-                  { number: '98%', label: 'Client Satisfaction' },
+                { number: '15+', label: 'Years Experience' },
+                { number: '500+', label: 'Clients Served' },
+                { number: '98%', label: 'Client Satisfaction' },
               ].map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
+                <div key={index} className="text-center">
+                  <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                    {stat.number}
                   </div>
+                  <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
+                </div>
               ))}
             </motion.div>
           </motion.div>

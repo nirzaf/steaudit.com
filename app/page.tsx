@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
+import AuditFilingBanner from '@/components/AuditFilingBanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Services from '@/components/Services';
 import About from '@/components/About';
@@ -24,6 +25,7 @@ export default function HomePage() {
     return (
         <div className="bg-site-bg">
             <Hero />
+            <AuditFilingBanner />
             <WhyChooseUs />
             <PrimeGlobal />
             <Performance />

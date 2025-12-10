@@ -161,7 +161,7 @@ export default function WhyChooseUs() {
                 className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 overflow-hidden border border-transparent hover:-translate-y-1 flex flex-col items-center text-center"
               >
                 <div className={`absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${feature.gradient}`}></div>
-                
+
                 <div className="relative flex flex-col items-center">
                   <div className={`flex h-16 w-16 items-center justify-center rounded-xl 
                                 bg-gradient-to-r ${feature.gradient} text-white 
@@ -172,7 +172,7 @@ export default function WhyChooseUs() {
                               transition-colors duration-300">
                     {feature.name}
                   </h3>
-                  <p className="mt-4 text-base text-brand-primary/70 group-hover:text-brand-primary 
+                  <p className="mt-4 text-base text-gray-600 group-hover:text-brand-primary 
                               transition-colors duration-300 leading-relaxed">
                     {feature.description}
                   </p>

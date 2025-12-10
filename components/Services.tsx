@@ -41,7 +41,7 @@ export default function Services() {
                 <h3 className="text-xl font-semibold text-brand-primary group-hover:text-brand-secondary transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-brand-primary/70 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
               </div>
