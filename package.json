@@ -5,8 +5,8 @@
   "type": "module",
   "packageManager": "bun@1.3.2",
   "scripts": {
-    "dev": "NEXT_TELEMETRY_DISABLED=1 next dev --turbopack",
-    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
+    "dev": "next dev --turbopack",
+    "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "eslint .",
