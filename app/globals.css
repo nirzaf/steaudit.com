@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-brand-primary);
   background-color: var(--color-site-bg);
+  overflow-x: hidden;
 }
 
 h1,
