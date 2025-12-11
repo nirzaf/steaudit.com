@@ -24,7 +24,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center space-x-4 mb-6">
+          <div className={`flex items-center justify-center space-x-4 ${isRTL ? 'space-x-reverse' : ''} mb-6`}>
             <div className="h-0.5 w-12 bg-[#2F7EAE]"></div>
             <h2 className="text-4xl font-medium tracking-tight text-[#000000] sm:text-5xl">
               {t('Our Commitment to Excellence', 'التزامنا بالتميز')}
@@ -44,7 +44,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#000000]/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex items-start space-x-4">
+              <div className={`flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
                 <img
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-22.png?updatedAt=1732207355523"
                   alt="Financial analysis"
@@ -69,7 +69,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#000000]/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex items-start space-x-4">
+              <div className={`flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
                 <img
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-15.jpg?updatedAt=1732207353030"
                   alt="Business consultation"
@@ -94,7 +94,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#000000]/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex items-start space-x-4">
+              <div className={`flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
                 <img
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-17.jpg?updatedAt=1732207353126"
                   alt="Team collaboration"

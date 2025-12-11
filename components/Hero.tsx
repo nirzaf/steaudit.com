@@ -107,7 +107,7 @@ export default function Hero() {
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-accent to-brand-secondary opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-center justify-center whitespace-nowrap text-sm sm:text-base">
                       <span>{t('Contact Us', 'تواصل معنا')}</span>
-                      <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                      <ChevronRight className={`${isRTL ? 'mr-2' : 'ml-2'} w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1`} />
                     </div>
                   </Link>
 
@@ -119,7 +119,7 @@ export default function Hero() {
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand-secondary/20 to-brand-accent/20 opacity-0 transition-all duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-center justify-center whitespace-nowrap text-sm sm:text-base">
                       <span>{t('Our Services', 'خدماتنا')}</span>
-                      <ChevronRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                      <ChevronRight className={`${isRTL ? 'mr-2' : 'ml-2'} w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1`} />
                     </div>
                   </a>
                 </motion.div>

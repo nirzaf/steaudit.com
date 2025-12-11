@@ -17,7 +17,11 @@ export default function ServicesPage() {
         { name: 'Services', path: '/services' },
     ]);
 
-    const safeServices = services.map(({ icon, ...rest }) => rest);
+    const safeServices = services.map((service) => {
+        const rest = { ...service };
+        delete rest.icon;
+        return rest;
+    });
     const servicesSchema = buildServicesStructuredData(safeServices);
 
     return (

@@ -44,7 +44,7 @@ export default function Contact() {
 
       if (error) throw error;
 
-      toast.success('Message sent successfully!');
+      toast.success(locale === 'ar' ? 'تم إرسال الرسالة بنجاح!' : 'Message sent successfully!');
       setFormData({
         name: '',
         email: '',
@@ -53,7 +53,7 @@ export default function Contact() {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast.error('Failed to send message. Please try again.');
+      toast.error(locale === 'ar' ? 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.' : 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
