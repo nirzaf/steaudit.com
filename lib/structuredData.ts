@@ -14,15 +14,15 @@ export const organizationSchema = {
     address: {
         '@type': 'PostalAddress',
         streetAddress:
-            'Office No 4, Building No 3, Street No 902, Zone No 55 Muaither Area',
+            'Flat No. 2, Floor No. 1, Street No 220, Building No 9, Zone 27, Umm Ghuwalina',
         addressLocality: 'Doha',
         addressRegion: 'Qatar',
         addressCountry: 'QA',
     },
     geo: {
         '@type': 'GeoCoordinates',
-        latitude: 25.2854,
-        longitude: 51.531,
+        latitude: 25.2814,
+        longitude: 51.5422,
     },
     openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',

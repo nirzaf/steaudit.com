@@ -230,45 +230,6 @@ export default function Contact() {
             <div className="space-y-6">
               {/* Map and Address Cards */}
               <div className="space-y-6">
-                {/* Muaither Office */}
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300 border border-brand-primary/10">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14432.914085278253!2d51.415211!3d25.262897!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45d9609642333b%3A0xe1b2139c78662585!2sSalem%20Taleb%20Efaifa%20Auditing%20and%20consultancy!5e0!3m2!1sen!2sus!4v1732233471451!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-t-lg"
-                    ></iframe>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-brand-primary/5 rounded-lg flex-shrink-0">
-                        <HiLocationMarker className="w-6 h-6 text-brand-primary" />
-                      </div>
-                      <div>
-                    <h3 className="text-xl font-semibold text-brand-primary mb-2">{t('Muaither Office', 'مكتب المعِيذر')}</h3>
-                    <p className="text-brand-primary/70 leading-relaxed">
-                      {t('Office No. 4, Building No. 3,', 'مكتب رقم 4، مبنى رقم 3،')}<br />
-                      {t('Street No. 902, Zone No. 55,', 'شارع رقم 902، منطقة رقم 55،')}<br />
-                      {t('Muaither Area, Qatar', 'منطقة المعيذر، قطر')}
-                    </p>
-                    <a 
-                      href="https://maps.app.goo.gl/zVLPxbrQbEnaJx4R7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center mt-3 text-sm text-brand-primary/80 hover:text-brand-primary hover:underline"
-                    >
-                      {t('View on Google Maps', 'عرض على خرائط جوجل')} <HiExternalLink className="ml-1" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-                </div>
-
                 {/* Umm Ghuwalina Office */}
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300 border border-brand-primary/10">
                   <div className="aspect-w-16 aspect-h-9">

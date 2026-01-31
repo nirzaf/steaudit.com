@@ -34,7 +34,7 @@ export const seoConfig: PageSEOConfig = {
   },
   contact: {
     title: 'Contact Us | Salem Taleb Efaifa Auditing & Consultancy',
-    description: 'Get in touch with our expert team for professional auditing and consulting services in Qatar. Visit our office in Muaither Area or contact us online.',
+    description: 'Get in touch with our expert team for professional auditing and consulting services in Qatar. Visit our office in Umm Ghuwalina or contact us online.',
     keywords: 'contact auditor qatar, financial consultant contact, qatar accounting firm contact, ste audit location',
     ogImage: 'https://ik.imagekit.io/ri5cvrkrr/neve-accounting-04.jpg'
   },

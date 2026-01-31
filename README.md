@@ -142,5 +142,5 @@ bun run lint
 
 - **Phone**: 📞 +97450008194
 - **Email**: ✉️ info@steaudit.com
-- **Address**: 🏢 Office No. 4, Building No. 3, Street No. 902, Zone No. 55, Muaither Area, Qatar.
-- **Location Map**: 🗺️ [View on Google Maps](https://maps.app.goo.gl/zVLPxbrQbEnaJx4R7)
+- **Address**: 🏢 Flat No. 2, Floor No. 1, Street No. 220, Building No. 9, Zone 27, Umm Ghuwalina, Qatar.
+- **Location Map**: 🗺️ [View on Google Maps](https://maps.app.goo.gl/Evu1fY4TYMzaqma5A)
