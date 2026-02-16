@@ -30,7 +30,7 @@
     "@next/bundle-analyzer": "^16.1.6",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.2.2",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.182.0",
     "autoprefixer": "^10.4.24",
