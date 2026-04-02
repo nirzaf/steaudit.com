@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useLocale } from './LocaleProvider';
 
 export default function Performance() {
@@ -92,18 +93,19 @@ export default function Performance() {
             className="relative group"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-            <div className="relative">
-              <img
+            <div className="relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-xl shadow-2xl">
+              <Image
                 src="https://ik.imagekit.io/ri5cvrkrr/istockphoto-1328399948-170667a.jpg?updatedAt=1732207359642"
                 alt="Professional Excellence"
-                className="w-full h-[600px] object-cover rounded-xl shadow-2xl"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Reflection Effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-xl"></div>
-
-              {/* Glass Effect Overlay */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
             </div>
+
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </motion.div>
         </div>
       </div>

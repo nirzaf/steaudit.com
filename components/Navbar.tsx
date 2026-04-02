@@ -13,6 +13,7 @@ import {
   Briefcase,
   PhoneCall
 } from 'lucide-react';
+import Image from 'next/image';
 import { useLocale } from './LocaleProvider';
 
 const Navbar = () => {
@@ -63,20 +64,19 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex justify-between items-center h-20 lg:h-24 ${isRTL ? 'flex-row-reverse' : ''}`}>
             {/* Logo */}
-            <Link href="/" className="flex items-center group">
+            <Link href="/" className="flex items-center group" aria-label="Go to homepage">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
                 className="relative h-10 sm:h-12 lg:h-14 w-auto"
               >
-                <img
+                <Image
                   src="https://ik.imagekit.io/ri5cvrkrr/LOGO-.png?updatedAt=1732207359661"
                   alt="STE Logo"
                   width={140}
                   height={56}
-                  loading="eager"
+                  priority
                   className="h-10 sm:h-12 lg:h-14 w-auto transition-all duration-300"
-                  style={{ color: 'transparent', filter: 'invert(0)' }}
                 />
               </motion.div>
             </Link>
@@ -130,7 +130,8 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
                 className="md:hidden focus:outline-none text-brand-primary/80 hover:text-brand-secondary min-h-[44px] min-w-[44px] p-2 rounded-lg hover:bg-brand-neutral/30 transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle menu"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
               >
                 <AnimatePresence mode="wait">
                   {isMobileMenuOpen ? (

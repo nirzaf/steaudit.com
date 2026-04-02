@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         return {
             url,
             lastModified,
-            changeFrequency: route === '/' ? 'weekly' : 'monthly',
+            changeFrequency: route === '/' ? 'weekly' : 'monthly' as const,
             priority: route === '/' ? 1 : 0.8,
             languages: {
                 'en-US': url,

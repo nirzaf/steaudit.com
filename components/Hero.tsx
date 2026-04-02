@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale } from './LocaleProvider';
 
 export default function Hero() {
@@ -19,12 +20,12 @@ export default function Hero() {
           transition={{ duration: 1.5 }}
           className="w-full h-full relative"
         >
-          <img
+          <Image
             src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-01.jpg?updatedAt=1732207350705"
             alt="Hero background"
-            loading="eager"
-            className="object-cover brightness-75 absolute inset-0 w-full h-full"
-            style={{ filter: 'invert(0)' }}
+            fill
+            priority
+            className="object-cover brightness-75"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80"></div>

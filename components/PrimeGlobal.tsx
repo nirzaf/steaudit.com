@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Globe, Users, MapPin, Handshake } from 'lucide-react';
 import { useLocale } from './LocaleProvider';
 
@@ -73,15 +74,15 @@ export default function PrimeGlobal() {
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center items-center">
-              <motion.img
-                initial={{ opacity: 1, scale: 1 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                src="https://ik.imagekit.io/ri5cvrkrr/PrimeGlobal_Icon_2002-2.png?updatedAt=1732207361432"
-                alt="PrimeGlobal Logo"
-                className="h-40 md:h-48 w-auto object-contain transform hover:scale-105 transition-transform duration-300"
-              />
+              <div className="relative h-40 md:h-48 w-full max-w-[200px]">
+                <Image
+                  src="https://ik.imagekit.io/ri5cvrkrr/PrimeGlobal_Icon_2002-2.png?updatedAt=1732207361432"
+                  alt="PrimeGlobal Logo"
+                  fill
+                  className="object-contain transform hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 200px, 250px"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
