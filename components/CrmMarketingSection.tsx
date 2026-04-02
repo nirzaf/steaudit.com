@@ -16,8 +16,6 @@ import {
     Cpu,
     UserCheck,
     TrendingUp,
-    ChevronRight,
-    ArrowRight,
     LayoutGrid,
     BookOpen,
     Landmark,
@@ -33,7 +31,6 @@ import {
     Package,
     Users,
     Combine,
-    Key,
     Receipt
 } from 'lucide-react';
 import Link from 'next/link';
