@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useLocale } from './LocaleProvider';
 
 export default function About() {
@@ -45,9 +46,11 @@ export default function About() {
               className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#000000]/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className={`flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
-                <img
+                <Image
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-22.png?updatedAt=1732207355523"
                   alt="Financial analysis"
+                  width={96}
+                  height={96}
                   className="w-24 h-24 rounded-lg object-cover shadow-md"
                 />
                 <div>
@@ -70,9 +73,11 @@ export default function About() {
               className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#000000]/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className={`flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
-                <img
+                <Image
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-15.jpg?updatedAt=1732207353030"
                   alt="Business consultation"
+                  width={96}
+                  height={96}
                   className="w-24 h-24 rounded-lg object-cover shadow-md"
                 />
                 <div>
@@ -95,9 +100,11 @@ export default function About() {
               className="backdrop-blur-xl bg-white/90 rounded-2xl border border-[#000000]/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className={`flex items-start space-x-4 ${isRTL ? 'space-x-reverse' : ''}`}>
-                <img
+                <Image
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-17.jpg?updatedAt=1732207353126"
                   alt="Team collaboration"
+                  width={96}
+                  height={96}
                   className="w-24 h-24 rounded-lg object-cover shadow-md"
                 />
                 <div>
@@ -124,9 +131,12 @@ export default function About() {
               className="col-span-2 group"
             >
               <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                <img
+                <Image
                   src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-12.jpg?updatedAt=1732207352390"
                   alt="Business professionals"
+                  width={800}
+                  height={400}
+                  sizes="(max-width: 1024px) 100vw, 800px"
                   className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -141,9 +151,12 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="relative group"
             >
-              <img
+              <Image
                 src="https://ik.imagekit.io/ri5cvrkrr/neve-accounting-19.jpg?updatedAt=1732207353391"
                 alt="Corporate meeting"
+                width={400}
+                height={300}
+                sizes="(max-width: 1024px) 50vw, 400px"
                 className="w-full h-48 object-cover rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
@@ -154,9 +167,12 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="relative group"
             >
-              <img
+              <Image
                 src="https://ik.imagekit.io/ri5cvrkrr/acc1.jpg?updatedAt=1732207356333"
                 alt="Office workspace"
+                width={400}
+                height={300}
+                sizes="(max-width: 1024px) 50vw, 400px"
                 className="w-full h-48 object-cover rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-500"
               />
             </motion.div>

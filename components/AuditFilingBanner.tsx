@@ -10,6 +10,7 @@ import {
     FileCheck,
     Clock3
 } from 'lucide-react';
+import Image from 'next/image';
 import { useLocale } from './LocaleProvider';
 
 export default function AuditFilingBanner() {
@@ -319,11 +320,12 @@ export default function AuditFilingBanner() {
                                             key={logo.alt}
                                             className="h-10 w-24 sm:h-12 sm:w-28 rounded-lg bg-white/95 px-3 py-1 flex items-center justify-center shadow-lg border border-white/60 hover:scale-105 transition-transform"
                                         >
-                                            <img
+                                            <Image
                                                 src={logo.src}
                                                 alt={logo.alt}
+                                                width={112}
+                                                height={48}
                                                 className="h-full w-full object-contain"
-                                                loading="lazy"
                                             />
                                         </div>
                                     ))}

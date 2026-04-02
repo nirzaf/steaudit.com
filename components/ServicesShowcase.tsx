@@ -207,13 +207,17 @@ export default function ServicesShowcase() {
         {/* Interactive Services Showcase */}
         <div ref={containerRef} className="relative h-[600px] mb-12">
           {/* Central Orbital Path */}
-          <div className="orbital-path absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-white/10 rotate-0">
+          <div 
+            className="orbital-path absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-white/10 rotate-0"
+            role="list"
+            aria-label={t("Our Services Orbit", "مدار خدماتنا")}
+          >
             {services.map((service, index) => {
               // Calculate position on the circle with rounding to avoid SSR/client float drift
               const angle = (index * (360 / services.length) * Math.PI) / 180;
               const x = Number((250 * Math.cos(angle)).toFixed(3));
               const y = Number((250 * Math.sin(angle)).toFixed(3));
-
+ 
               return (
                 <motion.div
                   key={service.id}
@@ -222,6 +226,9 @@ export default function ServicesShowcase() {
                       ? "scale-125 z-20"
                       : "scale-100 z-10"
                   }`}
+                  role="listitem"
+                  aria-label={locale === "ar" ? service.titleAr : service.title}
+                  aria-selected={activeService === index}
                   style={{
                     left: `calc(50% + ${x}px)`,
                     top: `calc(50% + ${y}px)`,
@@ -371,7 +378,11 @@ export default function ServicesShowcase() {
             </div>
 
             {/* Animation Layer */}
-            <div className="w-full h-full flex items-center justify-center p-4 relative z-0">
+            <div 
+              className="w-full h-full flex items-center justify-center p-4 relative z-0"
+              role="img"
+              aria-label={`${t("Illustration for", "توضيح لـ")} ${locale === "ar" ? services[activeService].titleAr : services[activeService].title}`}
+            >
               <Lottie
                 animationData={services[activeService].animation}
                 loop={true}
