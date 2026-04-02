@@ -88,6 +88,8 @@ const Navbar = () => {
                   key={path}
                   href={path}
                   className="relative group"
+                  aria-current={isActive(path) ? 'page' : undefined}
+                  id={`nav-link-${path === '/' ? 'home' : path.substring(1)}`}
                 >
                   <div className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 ${isActive(path)
                     ? 'text-brand-secondary bg-gradient-to-r from-brand-secondary/10 to-brand-accent/10'
@@ -108,6 +110,7 @@ const Navbar = () => {
               ))}
               <button
                 onClick={toggleLocale}
+                id="language-switcher-desktop"
                 className="ml-2 flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-neutral/70 text-brand-primary hover:bg-brand-neutral transition-colors duration-200 font-semibold"
                 aria-label={locale === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
               >
@@ -180,6 +183,8 @@ const Navbar = () => {
                     >
                       <Link
                         href={path}
+                        id={`nav-link-mobile-${path === '/' ? 'home' : path.substring(1)}`}
+                        aria-current={isActive(path) ? 'page' : undefined}
                         className={`flex items-center gap-3 py-3.5 px-4 text-sm font-semibold transition-all duration-300 rounded-xl ${isActive(path)
                           ? 'text-white bg-gradient-to-r from-brand-secondary to-brand-accent shadow-md'
                           : 'text-brand-primary/80 hover:text-brand-secondary hover:bg-brand-neutral/60 active:scale-95'
@@ -197,6 +202,7 @@ const Navbar = () => {
                         toggleLocale();
                         setIsMobileMenuOpen(false);
                       }}
+                      id="language-switcher-mobile"
                       className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-neutral/70 text-brand-primary font-semibold hover:bg-brand-neutral transition-colors duration-200"
                       aria-label={locale === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
                     >

@@ -9,6 +9,9 @@ export const organizationSchema = {
     '@type': 'ProfessionalService',
     name: ORGANIZATION_NAME_EN,
     alternateName: ORGANIZATION_NAME_AR,
+    legalName: ORGANIZATION_NAME_EN,
+    description: 'Expert auditing, thinning, consulting, and tax services in Qatar. Member of PrimeGlobal network.',
+    foundingDate: '1992', // Over 30 years as per description
     image: seoConfig.home.ogImage,
     '@id': SITE_URL,
     url: SITE_URL,
@@ -37,6 +40,36 @@ export const organizationSchema = {
         'https://www.facebook.com/steaudit',
     ],
 };
+
+export function buildContactPageSchema(locale: 'en' | 'ar' = 'en'): Record<string, unknown> {
+    const isAr = locale === 'ar';
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: isAr ? 'اتصل بنا' : 'Contact Us',
+        description: isAr 
+            ? 'تواصل مع فريق الخبراء لدينا للحصول على خدمات التدقيق والاستشارات المهنية في قطر.' 
+            : 'Get in touch with our expert team for professional auditing and consulting services in Qatar.',
+        mainEntity: {
+            '@id': SITE_URL,
+        },
+    };
+}
+
+export function buildAboutPageSchema(locale: 'en' | 'ar' = 'en'): Record<string, unknown> {
+    const isAr = locale === 'ar';
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: isAr ? 'من نحن' : 'About Us',
+        description: isAr 
+            ? 'اكتشف أكثر من 30 عاماً من التميز في تقديم خدمات التدقيق والاستشارات المهنية في قطر.' 
+            : 'Discover our 30+ years of excellence in providing professional auditing and consulting services in Qatar.',
+        mainEntity: {
+            '@id': SITE_URL,
+        },
+    };
+}
 
 export function buildBreadcrumbList(
     crumbs: Array<{ name: string; nameAr?: string; path: string }>,

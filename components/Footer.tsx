@@ -63,7 +63,11 @@ const Footer = () => {
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 hover:text-brand-accent transition-colors duration-300 flex items-center gap-2">
+                  <Link 
+                    href={link.href} 
+                    id={`footer-link-${link.href === '/' ? 'home' : link.href.substring(1)}`}
+                    className="text-gray-400 hover:text-brand-accent transition-colors duration-300 flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 bg-brand-secondary rounded-full"></span>
                     {link.name}
                   </Link>
@@ -80,7 +84,11 @@ const Footer = () => {
             <ul className="space-y-4">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link href={service.href} className="text-gray-400 hover:text-brand-accent transition-colors duration-300 flex items-center gap-2">
+                  <Link 
+                    href={service.href} 
+                    id={`footer-service-${service.href.split('#')[1]}`}
+                    className="text-gray-400 hover:text-brand-accent transition-colors duration-300 flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 bg-brand-secondary rounded-full"></span>
                     {service.name}
                   </Link>
@@ -101,11 +109,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-brand-secondary shrink-0" />
-                <a href="tel:+97400000000" className="hover:text-brand-accent transition-colors">+974 0000 0000</a>
+                <a href="tel:+97450008194" id="footer-contact-phone" className="hover:text-brand-accent transition-colors">+974 5000 8194</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-brand-secondary shrink-0" />
-                <a href="mailto:info@steaudit.com" className="hover:text-brand-accent transition-colors">info@steaudit.com</a>
+                <a href="mailto:info@steaudit.com" id="footer-contact-email" className="hover:text-brand-accent transition-colors">info@steaudit.com</a>
               </li>
             </ul>
           </div>

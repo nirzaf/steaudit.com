@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, Briefcase, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 import { useLocale } from '../LocaleProvider';
 
 interface Partner {
@@ -26,7 +27,7 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
 
   return (
     <section className="py-20 bg-gradient-to-b from-brand-primary/5 via-white to-[#00204A]/5 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Enhanced Background decorative elements */}
+      {/* ... previous decorative elements ... */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,53,0.08),transparent_50%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,198,53,0.08),transparent_50%)] pointer-events-none"></div>
 
@@ -56,12 +57,14 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
                   <div className="md:flex">
                     {/* Image Section */}
                     <div className="md:w-2/5 relative overflow-hidden">
-                      <div className="aspect-[4/5] md:aspect-auto md:h-full relative">
-                        {/* Image */}
-                        <img
+                      <div className="aspect-[4/5] md:aspect-auto md:h-full relative overflow-hidden">
+                        {/* Improved Image implementation */}
+                        <Image
                           src={partner.image}
                           alt={getText(partner.name, partner.nameAr)}
-                          className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-110"
+                          fill
+                          className="object-cover transform transition-transform duration-700 group-hover:scale-110"
+                          sizes="(max-width: 768px) 100vw, 40vw"
                         />
 
                         {/* Gradient overlay */}

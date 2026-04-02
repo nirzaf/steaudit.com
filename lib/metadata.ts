@@ -30,8 +30,8 @@ export function buildMetadata(
     alternates: {
       canonical: url,
       languages: {
-        'en-US': url,
-        'ar-QA': url, // Since we handle switching via state, both point to same URL, but bots will see both options
+        'en': `${SITE_URL}${pathname === '/' ? '' : pathname}`,
+        'ar': `${SITE_URL}${pathname === '/' ? '' : pathname}`,
       },
     },
     openGraph: {
@@ -60,7 +60,7 @@ export function buildMetadata(
       },
     },
     other: {
-      'google-site-verification': 'your-verification-code', // Recommended to add this placeholder
+      'google-site-verification': process.env.NEXT_PUBLIC_GSC_VERIFICATION || 'your-verification-code',
     }
   };
 }
