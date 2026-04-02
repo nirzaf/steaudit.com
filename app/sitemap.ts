@@ -6,10 +6,17 @@ const staticRoutes = ['/', '/about', '/services', '/partners', '/contact'] as co
 export default function sitemap(): MetadataRoute.Sitemap {
     const lastModified = new Date();
 
-    return staticRoutes.map((route) => ({
-        url: `${SITE_URL}${route === '/' ? '' : route}`,
-        lastModified,
-        changeFrequency: route === '/' ? 'weekly' : 'monthly',
-        priority: route === '/' ? 1 : 0.8,
-    }));
+    return staticRoutes.map((route) => {
+        const url = `${SITE_URL}${route === '/' ? '' : route}`;
+        return {
+            url,
+            lastModified,
+            changeFrequency: route === '/' ? 'weekly' : 'monthly',
+            priority: route === '/' ? 1 : 0.8,
+            languages: {
+                'en-US': url,
+                'ar-QA': url, // Pointing to same URL since we handle switching via state, but signals multilingual support
+            },
+        };
+    });
 }

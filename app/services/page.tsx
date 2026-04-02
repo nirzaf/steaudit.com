@@ -13,8 +13,8 @@ export const metadata: Metadata = buildMetadata('services', '/services');
 
 export default function ServicesPage() {
     const breadcrumbList = buildBreadcrumbList([
-        { name: 'Home', path: '/' },
-        { name: 'Services', path: '/services' },
+        { name: 'Home', nameAr: 'الرئيسية', path: '/' },
+        { name: 'Services', nameAr: 'خدماتنا', path: '/services' },
     ]);
 
     const safeServices = services.map((service) => {

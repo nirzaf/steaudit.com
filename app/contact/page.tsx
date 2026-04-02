@@ -11,8 +11,8 @@ export const metadata: Metadata = buildMetadata('contact', '/contact');
 
 export default function ContactPage() {
     const breadcrumbList = buildBreadcrumbList([
-        { name: 'Home', path: '/' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Home', nameAr: 'الرئيسية', path: '/' },
+        { name: 'Contact', nameAr: 'اتصل بنا', path: '/contact' },
     ]);
 
     return (

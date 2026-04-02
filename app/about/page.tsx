@@ -14,8 +14,8 @@ export const metadata: Metadata = buildMetadata('about', '/about');
 
 export default function AboutPage() {
     const breadcrumbList = buildBreadcrumbList([
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
+        { name: 'Home', nameAr: 'الرئيسية', path: '/' },
+        { name: 'About', nameAr: 'من نحن', path: '/about' },
     ]);
 
     return (

@@ -1,12 +1,14 @@
 import { seoConfig } from '@/config/seo';
 import { SITE_URL } from '@/lib/metadata';
 
-const ORGANIZATION_NAME = 'Salem Taleb Efaifa Auditing & Consultancy';
+const ORGANIZATION_NAME_EN = 'Salem Taleb Efaifa Auditing & Consultancy';
+const ORGANIZATION_NAME_AR = 'سالم طالب عفييفة للتدقيق والاستشارات';
 
 export const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: ORGANIZATION_NAME,
+    name: ORGANIZATION_NAME_EN,
+    alternateName: ORGANIZATION_NAME_AR,
     image: seoConfig.home.ogImage,
     '@id': SITE_URL,
     url: SITE_URL,
@@ -37,7 +39,8 @@ export const organizationSchema = {
 };
 
 export function buildBreadcrumbList(
-    crumbs: Array<{ name: string; path: string }>
+    crumbs: Array<{ name: string; nameAr?: string; path: string }>,
+    locale: 'en' | 'ar' = 'en'
 ): Record<string, unknown> {
     return {
         '@context': 'https://schema.org',
@@ -45,29 +48,31 @@ export function buildBreadcrumbList(
         itemListElement: crumbs.map((crumb, index) => ({
             '@type': 'ListItem',
             position: index + 1,
-            name: crumb.name,
+            name: locale === 'ar' && crumb.nameAr ? crumb.nameAr : crumb.name,
             item: `${SITE_URL}${crumb.path === '/' ? '' : crumb.path}`,
         })),
     };
 }
 
 export function buildServicesStructuredData(
-    serviceItems: Array<{ title: string; description: string }>
+    serviceItems: Array<{ title: string; titleAr?: string; description: string; descriptionAr?: string }>,
+    locale: 'en' | 'ar' = 'en'
 ): Record<string, unknown> {
+    const isAr = locale === 'ar';
     return {
         '@context': 'https://schema.org',
-        '@graph': serviceItems.map(({ title, description }) => ({
+        '@graph': serviceItems.map((item) => ({
             '@type': 'Service',
-            name: title,
-            description,
+            name: isAr && item.titleAr ? item.titleAr : item.title,
+            description: isAr && item.descriptionAr ? item.descriptionAr : item.description,
             provider: {
                 '@id': SITE_URL,
             },
             areaServed: {
                 '@type': 'AdministrativeArea',
-                name: 'Qatar',
+                name: isAr ? 'قطر' : 'Qatar',
             },
-            serviceType: title,
+            serviceType: isAr && item.titleAr ? item.titleAr : item.title,
         })),
     };
 }

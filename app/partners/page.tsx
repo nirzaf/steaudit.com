@@ -52,8 +52,8 @@ export const metadata: Metadata = buildMetadata('partners', '/partners');
 
 export default function PartnersPage() {
     const breadcrumbList = buildBreadcrumbList([
-        { name: 'Home', path: '/' },
-        { name: 'Partners', path: '/partners' },
+        { name: 'Home', nameAr: 'الرئيسية', path: '/' },
+        { name: 'Partners', nameAr: 'شركاؤنا', path: '/partners' },
     ]);
 
     return (
