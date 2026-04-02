@@ -8,6 +8,7 @@ import About from '@/components/About';
 import MissionVision from '@/components/MissionVision';
 import Performance from '@/components/Performance';
 import PrimeGlobal from '@/components/PrimeGlobal';
+import CrmMarketingSection from '@/components/CrmMarketingSection';
 import { buildMetadata } from '@/lib/metadata';
 
 // Dynamically import heavy components with GSAP/Lottie animations
@@ -31,6 +32,7 @@ export default function HomePage() {
             <Performance />
             <ServicesShowcase />
             <Services />
+            <CrmMarketingSection />
             <MissionVision />
             <About />
         </div>
