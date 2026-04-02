@@ -17,7 +17,24 @@ import {
     UserCheck,
     TrendingUp,
     ChevronRight,
-    ArrowRight
+    ArrowRight,
+    LayoutGrid,
+    BookOpen,
+    Landmark,
+    Globe,
+    BarChart3,
+    FileSpreadsheet,
+    Wallet,
+    ArrowDownLeft,
+    Truck,
+    Percent,
+    Building2,
+    Calculator,
+    Package,
+    Users,
+    Combine,
+    Key,
+    Receipt
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -140,7 +157,60 @@ export default function CrmMarketingSection() {
         empoweringText: isRTL
             ? "باختيارك إس تي إي للتدقيق، فأنت تتعاون مع شركة تستفيد من التكنولوجيا لتقديم رؤى أعمق ونتائج أسرع. نهجنا التكنولوجي المتقدم يسمح لنا بالتركيز على تزويدك بالوضوح المالي الاستراتيجي لتنمية عملك."
             : "By choosing STE Auditing, you are partnering with a firm that leverages technology to provide deeper insights and faster results. Our tech-forward approach allows us to focus more on what matters most: providing you with the strategic financial clarity to grow your business.",
-        ctaButton: isRTL ? "تسجيل الدخول إلى بوابة CRM" : "Login to CRM Portal"
+        ctaButton: isRTL ? "تسجيل الدخول إلى بوابة CRM" : "Login to CRM Portal",
+        accounting: {
+            title: isRTL ? "نظام المحاسبة المتكامل لـ STE للتدقيق" : "Bespoke Accounting System for STE Auditing",
+            subtitle: isRTL 
+                ? "ارتقِ بإدارتك المالية مع نظام محاسبة متكامل مصمم خصيصاً لتلبية احتياجاتك الاحترافية"
+                : "Elevate your financial management with an integrated accounting system custom-designed for professional excellence.",
+            note: isRTL
+                ? "تم تطويره وتخصيصه لضمان التكامل التام مع عمليات STE للتدقيق."
+                : "Custom-developed and tailored to ensure seamless integration with STE Auditing operations.",
+            flowTitle: isRTL ? "كيف تعمل الدورة المحاسبية" : "How the Accounting Lifecycle Works",
+            coreFeaturesTitle: isRTL ? "الميزات الأساسية" : "Core Features",
+            advancedFeaturesTitle: isRTL ? "قدرات متقدمة" : "Advanced Capabilities",
+            coreFeatures: [
+                {
+                    icon: <LayoutGrid className="w-6 h-6 text-site-accent" />,
+                    title: isRTL ? "دليل الحسابات" : "Chart of Accounts",
+                    text: isRTL ? "فئات منظمة للأصول والالتزامات وحقوق الملكية والدخل والمصاريف." : "Structured categories for assets, liabilities, equity, income, and expenses."
+                },
+                {
+                    icon: <BookOpen className="w-6 h-6 text-site-accent" />,
+                    title: isRTL ? "القيد المزدوج" : "Double-Entry Bookkeeping",
+                    text: isRTL ? "دفاتر يومية وأستاذ دقيقة مع إدارة كاملة للقيود." : "Accurate ledgers and journals with comprehensive journal entry management."
+                },
+                {
+                    icon: <Landmark className="w-6 h-6 text-site-accent" />,
+                    title: isRTL ? "التسوية البنكية" : "Banking & Reconciliation",
+                    text: isRTL ? "تتبع واستيراد المعاملات البنكية ومطابقتها مع الكشوف." : "Track bank transactions and reconcile accounts with ease."
+                },
+                {
+                    icon: <Globe className="w-6 h-6 text-site-accent" />,
+                    title: isRTL ? "دعم العملات المتعددة" : "Multi-Currency Support",
+                    text: isRTL ? "تحويلات العملات في الوقت الفعلي للتعامل مع العملاء الدوليين." : "Real-time currency conversions for seamless international operations."
+                },
+                {
+                    icon: <BarChart3 className="w-6 h-6 text-site-accent" />,
+                    title: isRTL ? "التقارير المالية" : "Financial Reports",
+                    text: isRTL ? "الأرباح والخسائر، الميزانية العمومية، التدفقات النقدية، وملخصات الضرائب." : "Professional P&L, Balance Sheets, Cash Flow, and Tax summaries."
+                }
+            ],
+            advancedFeatures: [
+                { icon: FileSpreadsheet, title: isRTL ? "إدارة الفواتير" : "Invoice Management" },
+                { icon: Wallet, title: isRTL ? "إدارة المصاريف" : "Expense Management" },
+                { icon: ArrowDownLeft, title: isRTL ? "الحسابات المدينة" : "Accounts Receivable" },
+                { icon: Truck, title: isRTL ? "إدارة الموردين" : "Vendor Management" },
+                { icon: Percent, title: isRTL ? "إدارة الضرائب" : "Tax Management" },
+                { icon: Building2, title: isRTL ? "تعدد الشركات" : "Multi-Company" },
+                { icon: Calculator, title: isRTL ? "الميزانية والتنبؤ" : "Budget & Forecast" },
+                { icon: Package, title: isRTL ? "الأصول الثابتة" : "Fixed Assets" },
+                { icon: Users, title: isRTL ? "تكامل الرواتب" : "Payroll Integration" },
+                { icon: LayoutGrid, title: isRTL ? "تكامل المخزون" : "Inventory Integration" },
+                { icon: Combine, title: isRTL ? "الربط البنكي" : "Bank Integration" },
+            ]
+        },
+        ctaTitle: isRTL ? "هل أنت مستعد لاتخاذ الخطوة التالية؟" : "Ready to take the next step?"
     };
 
     const containerVariants = {
@@ -261,6 +331,105 @@ export default function CrmMarketingSection() {
                         />
                     </div>
                 </motion.div>
+
+                {/* Accounting Module Section */}
+                <div id="accounting-module" className="mt-40 pt-20 border-t border-gray-100 dark:border-gray-800">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-site-accent/10 text-site-accent text-sm font-bold mb-4 uppercase tracking-wider">
+                            {isRTL ? "حلول مالية متكاملة" : "Integrated Financial Solutions"}
+                        </span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-site-text dark:text-white mb-6">
+                            {content.accounting.title}
+                        </h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+                            {content.accounting.subtitle}
+                        </p>
+                        <p className="text-sm text-gray-400 dark:text-gray-500 italic">
+                            {content.accounting.note}
+                        </p>
+                    </motion.div>
+
+                    {/* Accounting Flow */}
+                    <div className="mb-24">
+                        <div className="text-center mb-12">
+                            <h3 className="text-2xl font-bold text-site-text dark:text-white">{content.accounting.flowTitle}</h3>
+                        </div>
+                        <div className={`flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-4 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+                            <FlowStep 
+                                isRTL={isRTL}
+                                icon={Receipt}
+                                title={isRTL ? "التقاط المعاملات" : "Transaction Capture"}
+                                description={isRTL ? "فواتير، مصاريف، وتغذيات بنكية في مكان واحد." : "Invoices, expenses, and bank feeds simplified in one place."}
+                            />
+                            <FlowStep 
+                                isRTL={isRTL}
+                                icon={BookOpen}
+                                title={isRTL ? "محرك القيد المزدوج" : "Double-Entry Engine"}
+                                description={isRTL ? "إنشاء تلقائي للقيود المحاسبية بدقة تامة." : "Automated journal entries for 100% financial accuracy."}
+                            />
+                            <FlowStep 
+                                isRTL={isRTL}
+                                icon={Combine}
+                                title={isRTL ? "تسوية شاملة" : "Global Reconciliation"}
+                                description={isRTL ? "مطابقة ذكية عبر العملات والحسابات المتعددة." : "Smart matching across currencies and bank accounts."}
+                            />
+                            <FlowStep 
+                                isRTL={isRTL}
+                                isLast
+                                icon={BarChart3}
+                                title={isRTL ? "التمكن المالي" : "Financial Mastery"}
+                                description={isRTL ? "تقارير وتحليلات فورية لدعم قراراتك." : "Real-time reports and analytics to guide your growth."}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Core Features Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-20">
+                        {content.accounting.coreFeatures.map((feature, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow"
+                            >
+                                <div className="w-10 h-10 bg-site-accent/5 rounded-lg flex items-center justify-center mb-4">
+                                    {feature.icon}
+                                </div>
+                                <h4 className="font-bold text-site-text dark:text-white mb-2 text-sm">{feature.title}</h4>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">{feature.text}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Advanced Features */}
+                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 md:p-12 border border-gray-100 dark:border-gray-700">
+                        <h3 className="text-xl font-bold text-site-text dark:text-white mb-8 text-center">{content.accounting.advancedFeaturesTitle}</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                            {content.accounting.advancedFeatures.map((feature, idx) => {
+                                const Icon = feature.icon;
+                                return (
+                                    <motion.div
+                                        key={idx}
+                                        whileHover={{ y: -5 }}
+                                        className="flex flex-col items-center text-center space-y-3"
+                                    >
+                                        <div className="w-12 h-12 rounded-xl bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm border border-gray-100 dark:border-gray-700">
+                                            <Icon className="w-5 h-5 text-site-accent" />
+                                        </div>
+                                        <span className="text-xs font-semibold text-gray-600 dark:text-gray-300">{feature.title}</span>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
