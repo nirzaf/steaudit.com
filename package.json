@@ -35,7 +35,7 @@
     "@types/three": "^0.185.0",
     "autoprefixer": "^10.5.2",
     "eslint": "^10.6.0",
-    "eslint-config-next": "^16.2.9",
+    "eslint-config-next": "^16.2.10",
     "postcss": "^8.5.16",
     "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
