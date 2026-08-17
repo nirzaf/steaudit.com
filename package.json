@@ -14,7 +14,7 @@
   "dependencies": {
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
-    "@supabase/supabase-js": "^2.112.2",
+    "@supabase/supabase-js": "^2.112.3",
     "framer-motion": "^13.1.0",
     "gsap": "^3.15.0",
     "lottie-react": "^2.4.1",
