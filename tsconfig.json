@@ -14,7 +14,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     },
