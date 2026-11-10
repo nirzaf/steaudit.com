@@ -5,7 +5,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FileText, Clock, Users, BarChart2, PieChart } from "lucide-react";
-import Lottie from "lottie-react";
+import { Lottie } from "lottie-react";
 import { useLocale } from "./LocaleProvider";
 
 // Import service icons animations
@@ -384,7 +384,8 @@ export default function ServicesShowcase() {
               aria-label={`${t("Illustration for", "توضيح لـ")} ${locale === "ar" ? services[activeService].titleAr : services[activeService].title}`}
             >
               <Lottie
-                animationData={services[activeService].animation}
+                src={services[activeService].animation}
+                autoplay
                 loop={true}
                 style={{ width: "100%", height: "100%", opacity: 0.9 }}
               />

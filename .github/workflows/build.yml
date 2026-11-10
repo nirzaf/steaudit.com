@@ -1,0 +1,43 @@
+name: Production build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and type-check (${{ matrix.package-manager }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        package-manager: [npm, bun]
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: oven-sh/setup-bun@v2
+        if: matrix.package-manager == 'bun'
+        with:
+          bun-version: '1.4.4'
+      - name: Install npm-locked dependencies
+        if: matrix.package-manager == 'npm'
+        run: npm ci
+      # Match vercel.json, including its non-frozen Bun install.
+      - name: Install Vercel dependencies
+        if: matrix.package-manager == 'bun'
+        run: bun install
+      - name: Build production routes
+        run: ${{ matrix.package-manager }} run build
+      # Next.js currently skips type validation in next.config.ts.
+      - name: Check TypeScript
+        run: ${{ matrix.package-manager }} run type-check
